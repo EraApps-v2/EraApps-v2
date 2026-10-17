@@ -15,11 +15,13 @@ Web application for barcode attendance, employee access, store promotions, and d
 
 Open `index.html` in a browser. Cloud login and data access require the configured Supabase project and its schema, Row Level Security policies, Edge Functions, and Storage buckets.
 
-## Deploy with Netlify
+## Publish with GitHub Pages
 
-This repository is configured to publish the repository root as a static site. Connect the GitHub repository to the existing Netlify project `eraapps`, use branch `main`, and leave the build command empty. Future pushes to `main` will start deployments when the Netlify team is allowed to deploy.
+GitHub Actions publishes the repository root to GitHub Pages whenever changes are pushed to `main`. No Netlify connection or build service is used.
 
-From VS Code, stage and commit the changes, then use **Push** or **Sync Changes** to send them to GitHub. Netlify deploys automatically after the repository is connected.
+In VS Code, stage and commit changes, then use **Push** or **Sync Changes**. The configured Pages workflow deploys the site automatically; check the repository's **Actions** tab for deployment status.
+
+The site URL is `https://eraapps-v2.github.io/EraApps-v2/` after GitHub Pages has completed its first deployment.
 
 ## Security
 
