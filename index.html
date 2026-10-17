@@ -213,6 +213,12 @@ td small{color:var(--muted)}
 .promo-folder-tools .promo-folder-expiry{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;white-space:nowrap}
 .promo-folder-expiry input{width:150px;min-height:36px;padding:6px 8px}
 .promo-folder-content{padding:12px}
+.info-list{display:grid;gap:12px;margin-top:12px}
+.info-post{border:1px solid var(--line);border-left:5px solid var(--navy);border-radius:10px;background:#fff;padding:14px 16px}
+.info-post h3{margin:0 0 4px;font-size:16px;line-height:1.3;color:var(--navy)}
+.info-post time{display:block;margin-bottom:10px;font-size:12px;color:var(--muted)}
+.info-post .info-body{font-size:14px;line-height:1.6;overflow-wrap:anywhere;white-space:pre-wrap}
+.info-post .small-btn{margin-top:12px}
 .promo-folder-content[hidden],.promo-category-content[hidden]{display:none!important}
 .promo-categories{display:grid;gap:12px}
 .promo-category{border:1px solid #cfdbe6;border-left:5px solid var(--red);border-radius:8px;background:#fff;overflow:hidden}
@@ -354,7 +360,7 @@ td small{color:var(--muted)}
 <div class="hint">Absensi tidak bisa dikirim sebelum foto berhasil diambil.</div>
 <label for="reason" style="display:block;margin-top:14px"><b>Reason / Alasan setiap absensi</b></label><textarea id="reason" class="reasonbox" placeholder="Wajib diisi. Contoh: mulai shift pagi, istirahat makan, keperluan pribadi, ke toilet, atau selesai shift."></textarea><div class="hint">Alasan wajib diisi untuk setiap aktivitas absensi dan akan masuk ke log serta laporan.</div><div class="actions"><button class="green" id="record" disabled>Catat Absensi</button><button class="secondary" id="clearSelection">Reset pilihan</button></div><div class="notice" id="notice"></div></div></section>
 <div id="promoPanel" class="panel section" hidden><h2 id="promoPanelTitle">Promo</h2><div class="pad">
- <label class="promo-search">Cari folder atau promo<input id="promoSearch" type="search" placeholder="Ketik nama folder, judul, atau informasi" autocomplete="off"></label>
+ <label class="promo-search"><span id="promoSearchLabel">Cari folder atau promo</span><input id="promoSearch" type="search" placeholder="Ketik nama folder atau judul promo" autocomplete="off"></label>
  <div id="promoList"></div>
 </div></div>
 <section class="admin-only"><div class="panel"><h2>Aktivitas Terbaru</h2><div class="pad"><div class="toolbar"><div><b>Log absensi</b><div class="mini">Waktu diambil otomatis dari perangkat ini.</div></div><input id="filter" placeholder="Cari nama / aktivitas..."></div><div class="tablewrap"><table><thead><tr><th>Waktu</th><th>Kode</th><th>Nama</th><th>Aktivitas</th><th>Reason / Alasan</th><th>Foto</th></tr></thead><tbody id="logRows"></tbody></table><div id="logEmpty" class="empty">Belum ada data absensi.</div></div></div></div>
@@ -439,17 +445,20 @@ td small{color:var(--muted)}
  </div><div class="actions"><button type="button" class="red" id="deleteFilteredHistory">Hapus Riwayat Sesuai Filter</button><button type="button" class="red" id="deleteAllHistory">Hapus Semua Riwayat Absensi</button></div>
 </div></div>
 <div id="adminPromoPanel" class="panel section admin-only" hidden><h2 id="adminPromoTitle">Promo</h2><div class="pad">
+ <div id="adminPromoManage">
  <h3>Folder promo dan file</h3>
  <form id="promoFolderForm" class="actions"><input id="promoFolderName" required maxlength="60" placeholder="Nama folder baru"><button type="submit">Tambah Folder</button></form>
  <div class="actions"><label class="secondary small-btn folder-upload">Pilih Folder dari PC<input id="promoDirectoryUpload" type="file" webkitdirectory directory multiple></label><button type="button" id="saveDirectoryUpload" disabled>Simpan Folder</button><span id="directoryUploadStatus" class="mini"></span></div>
  <div id="adminPromoFolders"></div>
- <hr><h3>Publikasikan promo / informasi</h3>
+ <hr></div>
+ <h3 id="promoPublishHeading">Publikasikan promo</h3>
  <form id="promoForm"><div class="settings-grid">
-  <label>Folder<select id="promoFolderSelect"></select></label>
-  <label>Judul halaman / promo<input id="promoTitle" required placeholder="Promo Oktober"></label>
-  <label>Foto promo<input id="promoImage" type="file" accept="image/*"></label>
-  <label style="grid-column:1/-1">Informasi promo<textarea id="promoText" required rows="3" style="width:100%;margin-top:5px" placeholder="Detail promo atau informasi untuk karyawan"></textarea></label>
- </div><div class="actions"><button type="submit">Publikasikan Promo</button></div></form>
+  <label id="promoFolderLabel">Folder<select id="promoFolderSelect"></select></label>
+  <label><span id="promoTitleLabel">Judul promo</span><input id="promoTitle" required placeholder="Promo Oktober"></label>
+  <label id="promoImageLabel">Foto promo<input id="promoImage" type="file" accept="image/*" required></label>
+  <label style="grid-column:1/-1"><span id="promoTextLabel">Keterangan promo</span><textarea id="promoText" required rows="3" style="width:100%;margin-top:5px" placeholder="Detail promo untuk karyawan"></textarea></label>
+ </div><div class="actions"><button type="submit" id="promoSubmitButton">Publikasikan Promo</button></div></form>
+ <div id="adminInfoList" hidden></div>
 </div></div>
 <div id="passwordResetPanel" class="panel section admin-only" hidden><h2>Persetujuan Reset Password</h2><div class="pad"><div id="passwordResetRequests"></div></div></div>
 <div id="adminContentPanel" class="panel section admin-only" hidden><h2>Menu & Konten Tambahan</h2><div class="pad">
@@ -675,7 +684,7 @@ function showUserPage(page){
  $('userRegistrationButton').classList.toggle('active',registrationVisible);
  if(dashboardVisible){renderRoleDashboard();showHighlightSlide(highlightIndex)}
  if(page==='approval'){showUserPage('dashboard');$('userApprovalButton').classList.add('active');$('pendingAccountsTitle').scrollIntoView({behavior:'smooth',block:'start'})}
- if(promoVisible){$('promoPanelTitle').textContent=informationVisible?'Informasi':'Promo';renderPromos()}
+ if(promoVisible){$('promoPanelTitle').textContent=informationVisible?'Informasi':'Promo';$('promoSearchLabel').textContent=informationVisible?'Cari informasi':'Cari folder atau promo';$('promoSearch').placeholder=informationVisible?'Ketik judul atau isi informasi':'Ketik nama folder atau judul promo';renderPromos()}
 }
 $('userDashboardButton').onclick=()=>showUserPage('dashboard');
 $('userApprovalButton').onclick=()=>showUserPage('approval');
@@ -1090,6 +1099,15 @@ async function downloadPromoFolder(folder,jpegImages=false){
 }
 function promoDisplayTitle(p){const title=String(p.title||'').trim(),fileStem=String(p.fileName||'').replace(/\.[^.]+$/,'').trim();return fileStem&&title.toLowerCase()===fileStem.toLowerCase()?'':title}
 function promoMatchesView(item,mode){return mode==='information'?(!item.image&&!item.fileData):Boolean(item.image||item.fileData)}
+function infoCard(p,admin=false){const canManage=admin||currentUser?.role==='admin'||currentUser?.profile?.role==='admin',title=String(p.title||'').trim();return `<article class="info-post">${title?`<h3>${esc(title)}</h3>`:''}<time>${esc(p.created||'')}</time><div class="info-body">${sanitizeRichText(p.text||'')}</div>${canManage?`<button type="button" class="red small-btn" data-delete-promo="${esc(p.id)}">Hapus informasi</button>`:''}</article>`}
+function infoItems(query=''){return promos.filter(item=>promoMatchesView(item,'information')&&!isHighlightFolder(item.folder)&&!isPromoFolderExpired(item.folder)&&(!query||[item.title,item.text].join(' ').replace(/<[^>]*>/g,' ').toLowerCase().includes(query)))}
+function applyAdminPromoMode(){
+ const info=adminPromoMode==='information',set=(id,text)=>{const el=$(id);if(el)el.textContent=text};
+ $('adminPromoManage').hidden=info;$('promoFolderLabel').hidden=info;$('promoImageLabel').hidden=info;$('promoImage').required=!info;$('adminInfoList').hidden=!info;
+ set('promoPublishHeading',info?'Publikasikan informasi':'Publikasikan promo');set('promoTitleLabel',info?'Judul informasi':'Judul promo');set('promoTextLabel',info?'Isi informasi':'Keterangan promo');set('promoSubmitButton',info?'Publikasikan Informasi':'Publikasikan Promo');
+ $('promoTitle').placeholder=info?'Pengumuman Oktober':'Promo Oktober';$('promoText').placeholder=info?'Isi informasi untuk karyawan':'Detail promo untuk karyawan';
+ if(info){$('promoImage').value='';if(promoFolders.includes('Umum'))$('promoFolderSelect').value='Umum'}
+}
 function promoCard(p,admin=false){const title=promoDisplayTitle(p),canDownload=(currentUser?.role==='admin'||currentUser?.role==='user')&&!p.isHighlight&&!isHighlightFolder(p.folder),canManage=admin||currentUser?.role==='admin'||currentUser?.profile?.role==='admin';return `<article class="promo-file">${title?`<b>${esc(title)}</b>`:''}<div class="mini">${esc(p.created||'')}</div>${p.image?`<img src="${esc(p.image)}" alt="Foto promo" loading="lazy">${canDownload?`<button type="button" class="secondary small-btn" data-download-jpeg="${esc(p.id)}">Download JPEG</button>`:''}`:p.fileData?`<div class="mini">File tersedia</div>${canDownload?`<button type="button" class="secondary small-btn" data-download-file="${esc(p.id)}">Download file</button>`:''}`:''}<div style="white-space:pre-wrap">${sanitizeRichText(p.text||'')}</div>${canManage?`<button type="button" class="red small-btn" data-delete-promo="${esc(p.id)}">Hapus promo</button>`:''}</article>`}
  function promoFolderExpiryDate(folder){return appSettings.promoFolderExpiry?.[folder]||''}
  function isPromoFolderExpired(folder){return Object.entries(appSettings.promoFolderExpiry||{}).some(([path,expiry])=>(folder===path||folder.startsWith(`${path}/`))&&expiry&&Date.parse(`${expiry}T23:59:59.999`)<Date.now())}
@@ -1147,7 +1165,7 @@ function renderAdminPromoFolders(){
  target.querySelectorAll('[data-download-folder]').forEach(button=>button.onclick=()=>downloadPromoFolder(button.dataset.downloadFolder));
 }
 function renderPromos(){
- const target=$('promoList');renderAdminPromoFolders();
+ const target=$('promoList');renderAdminPromoFolders();applyAdminPromoMode();
  const highlightItems=promos.filter(item=>(item.isHighlight||isHighlightFolder(item.folder))&&item.image&&!isPromoFolderExpired(item.folder));
  if(highlightTimer)clearInterval(highlightTimer);showHighlightSlide(highlightIndex);
  if(highlightItems.length>1&&currentUser?.role==='user')highlightTimer=setInterval(()=>showHighlightSlide(highlightIndex+1),5000);
@@ -1156,7 +1174,10 @@ function renderPromos(){
  const groups=regularFolders.map(folder=>{const items=promos.filter(item=>item.folder===folder&&promoMatchesView(item,promoViewMode)),folderMatches=folder.toLowerCase().includes(query),matches=query&&!folderMatches?items.filter(item=>[item.title,item.fileName,item.text].join(' ').replace(/<[^>]*>/g,' ').toLowerCase().includes(query)):items;return {folder,items:matches}}).filter(group=>group.items.length);
  const canDownload=currentUser?.role==='admin'||currentUser?.role==='user';
  if(!groups.some(group=>group.folder===openPromoFolder))openPromoFolder='';
- target.innerHTML=groups.length?`<div class="promo-categories">${groups.map(group=>{const expanded=openPromoFolder===group.folder;return `<section class="promo-category"><button type="button" class="promo-category-toggle" data-promo-folder-toggle="${esc(group.folder)}" aria-expanded="${expanded}"><span class="promo-category-name"><strong>${esc(group.folder)}</strong><small>${group.items.length} promo</small></span><span class="promo-chevron" aria-hidden="true">›</span></button><div class="promo-category-content" ${expanded?'':'hidden'}><div class="promo-folder-tools">${canDownload?`<button type="button" class="secondary small-btn" data-download-user-folder="${esc(group.folder)}">Download Folder JPEG</button>`:''}</div><div class="promo-file-grid">${group.items.map(promoCard).join('')}</div></div></section>`}).join('')}</div>`:(promos.length?(query?'<div class="empty">Tidak ada promo yang cocok dengan pencarian.</div>':'<div class="empty">Promo Highlight tampil pada slideshow di atas.</div>'):'<div class="empty">Belum ada promo atau informasi.</div>');
+ target.innerHTML=groups.length?`<div class="promo-categories">${groups.map(group=>{const expanded=openPromoFolder===group.folder;return `<section class="promo-category"><button type="button" class="promo-category-toggle" data-promo-folder-toggle="${esc(group.folder)}" aria-expanded="${expanded}"><span class="promo-category-name"><strong>${esc(group.folder)}</strong><small>${group.items.length} promo</small></span><span class="promo-chevron" aria-hidden="true">›</span></button><div class="promo-category-content" ${expanded?'':'hidden'}><div class="promo-folder-tools">${canDownload?`<button type="button" class="secondary small-btn" data-download-user-folder="${esc(group.folder)}">Download Folder JPEG</button>`:''}</div><div class="promo-file-grid">${group.items.map(promoCard).join('')}</div></div></section>`}).join('')}</div>`:(promos.length?(query?'<div class="empty">Tidak ada promo yang cocok dengan pencarian.</div>':'<div class="empty">Promo Highlight tampil pada slideshow di atas.</div>'):'<div class="empty">Belum ada promo.</div>');
+ if(promoViewMode==='information'){const list=infoItems(query);target.innerHTML=list.length?`<div class="info-list">${list.map(item=>infoCard(item)).join('')}</div>`:`<div class="empty">${query?'Tidak ada informasi yang cocok dengan pencarian.':'Belum ada informasi yang dipublikasikan.'}</div>`}
+ const adminInfo=$('adminInfoList');
+ if(adminInfo&&adminPromoMode==='information'){const list=infoItems();adminInfo.innerHTML=`<hr><h3>Informasi terpublikasi</h3>${list.length?`<div class="info-list">${list.map(item=>infoCard(item,true)).join('')}</div>`:'<div class="empty">Belum ada informasi yang dipublikasikan.</div>'}`;adminInfo.querySelectorAll('[data-delete-promo]').forEach(button=>button.onclick=()=>{if(currentUser?.role!=='admin')return;if(savePromoData(promos.filter(item=>String(item.id)!==button.dataset.deletePromo)))renderPromos()})}
  applyPromoImageOrientation(target);
  target.querySelectorAll('[data-promo-folder-toggle]').forEach(button=>button.onclick=()=>{const folder=button.dataset.promoFolderToggle;openPromoFolder=openPromoFolder===folder?'':folder;renderPromos()});
  target.querySelectorAll('[data-download-jpeg]').forEach(button=>button.onclick=()=>downloadPromoJpeg(button.dataset.downloadJpeg));
