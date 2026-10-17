@@ -140,6 +140,7 @@
     'Pilih Folder dari PC': ['Choose Folder from PC', '从电脑选择文件夹', 'اختر مجلداً من الكمبيوتر', 'Chọn thư mục từ máy tính'],
     'Pilih Foto dari Perangkat': ['Choose Photo from Device', '从设备选择照片', 'اختر صورة من الجهاز', 'Chọn ảnh từ thiết bị'],
     'Promo / Informasi': ['Promo / Information', '促销 / 信息', 'العروض / المعلومات', 'Khuyến mãi / Thông tin'],
+    'Promo': ['Promotions', '促销', 'العروض', 'Khuyến mãi'],
     'Promo / Informasi Toko': ['Store Promo / Information', '门店促销 / 信息', 'عروض / معلومات المتجر', 'Khuyến mãi / Thông tin cửa hàng'],
     'Cari folder atau promo': ['Search folders or promos', '搜索文件夹或促销', 'ابحث في المجلدات أو العروض', 'Tìm thư mục hoặc khuyến mãi'],
     'Ketik nama folder, judul, atau informasi': ['Enter a folder name, title, or description', '输入文件夹名称、标题或信息', 'أدخل اسم مجلد أو عنواناً أو معلومات', 'Nhập tên thư mục, tiêu đề hoặc thông tin'],

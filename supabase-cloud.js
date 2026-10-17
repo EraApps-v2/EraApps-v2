@@ -408,7 +408,7 @@
     const activeAccount = role === 'user' ? (account || currentUser.account) : null;
     enterApp(role, activeAccount);
     const languageMenu = $('langMenu');
-    if (languageMenu) document.querySelector('header').appendChild(languageMenu);
+    if (languageMenu) $('appNavRight').appendChild(languageMenu);
     currentUser = { role, profile, account: activeAccount };
     const name = profile.full_name || profile.username || profile.email || 'Pengguna';
     const type = role === 'admin' ? 'Admin' : (profile.user_type || 'ERO');
@@ -419,7 +419,7 @@
     if (accountInfo) {
       accountInfo.textContent = `${profile.username || profile.email || name} · ${type}`;
       accountInfo.title = [name, profile.email, profile.organization, profile.lob, profile.tsh, profile.store_name].filter(Boolean).join(' · ');
-      accountInfo.hidden = false;
+      accountInfo.hidden = true;
     }
     if (role === 'user') {
       if (type === 'Store Leader') {
@@ -1063,9 +1063,8 @@
     catch (error) { showError(error); }
   }, true);
 
-  const logout = document.createElement('button');
-  logout.id = 'logoutButton'; logout.className = 'secondary'; logout.innerHTML = '<span aria-hidden="true">⏻</span>'; logout.setAttribute('aria-label', 'Keluar'); logout.title = 'Keluar'; logout.hidden = true;
-  logout.style.marginLeft = 'auto'; document.querySelector('header').appendChild(logout);
+  const logout = $('logoutButton');
+  logout.hidden = true;
   logout.addEventListener('click', async () => { if (realtimeChannel) await client.removeChannel(realtimeChannel); await client.auth.signOut(); window.location.reload(); });
 
   async function boot() {
@@ -1078,7 +1077,7 @@
     savePasswordResetRequests = () => updatePasswordResetBadge();
     savePromoData = () => false;
     $('headerLogo').removeAttribute('src'); $('headerLogo').style.display = 'none'; $('brandText').style.display = '';
-    document.querySelector('header h1').textContent = 'Sistem Absensi Barcode';
+    document.querySelector('header h1').textContent = 'Apps Monitoring';
     document.body.style.background = 'var(--bg)';
     applyAppearance();
     if (!config || !config.url || !config.anonKey || config.url.includes('YOUR_PROJECT_ID') || config.anonKey.includes('YOUR_SUPABASE')) {

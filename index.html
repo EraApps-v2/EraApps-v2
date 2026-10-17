@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EraApps | Sistem Absensi</title>
 <style>
-:root{--red:#d71920;--navy:#123b60;--blue:#1677c8;--bg:#fff;--ink:#182433;--muted:#637387;--line:#dce5ee}*{box-sizing:border-box}body{margin:0;background:var(--bg);font:15px/1.45 Helvetica,Arial,sans-serif;color:var(--ink)}header{background:linear-gradient(120deg,#b80f1d,#e31b2b);color:#fff;padding:20px clamp(16px,4vw,42px);display:flex;align-items:center;gap:18px;flex-wrap:wrap}header .brand{font-weight:900;font-size:25px;line-height:1.05;border-right:2px solid #ffffff88;padding-right:20px}header h1{font-size:clamp(20px,3vw,30px);margin:0}header p{margin:3px 0 0;opacity:.9}.wrap{max-width:1400px;margin:auto;padding:20px}.grid{display:grid;grid-template-columns: minmax(300px,390px) 1fr;gap:18px}.panel{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 3px 12px #173c5b0a;overflow:hidden}.panel h2{font-size:17px;color:white;background:var(--navy);margin:0;padding:12px 16px}.pad{padding:16px}.scanbox{display:flex;gap:8px}.scanbox input{flex:1;min-width:0}input,select,button{font:inherit;border-radius:9px;border:1px solid #c9d5e2;padding:11px 12px}input:focus,select:focus{outline:2px solid #8bc4f8;border-color:#1677c8}button{cursor:pointer;border:0;background:var(--blue);color:#fff;font-weight:700}button.secondary{background:#e9f1f8;color:#173b5d;border:1px solid #d1e0ed}button.red{background:var(--red)}button.green{background:#168553}button:disabled{opacity:.45;cursor:not-allowed}.hint{font-size:12px;color:var(--muted);margin:8px 0}.person{background:#f4f8fc;border:1px solid var(--line);padding:12px;border-radius:10px;margin:12px 0}.person strong{display:block;font-size:17px}.activities{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.activities button{min-height:56px;text-align:left;background:#f4f8fc;color:#183d60;border:1px solid #d7e4ef}.activities button span{display:block;font-size:12px;font-weight:500;color:#65778a}.activities button.active{outline:2px solid var(--blue);background:#e5f2ff}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:16px}.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px}.stat small{color:var(--muted)}.stat b{display:block;font-size:26px;color:var(--navy)}.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}.toolbar input{max-width:240px}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:720px}th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;font-size:13px}th{background:#f2f6fa;color:#25445f;position:sticky;top:0}td small{color:var(--muted)}.pill{display:inline-block;padding:3px 8px;border-radius:99px;background:#e6f3ec;color:#17683f;font-size:12px}.warn{background:#fff6df;color:#8a5a00}.empty{padding:26px;text-align:center;color:var(--muted)}.section{margin-top:18px}.notice{border-radius:10px;padding:10px 12px;margin-top:10px;font-size:13px;display:none}.notice.show{display:block}.notice.ok{background:#e7f6ec;color:#146b3a}.notice.err{background:#fff0f0;color:#a61b1b}.mini{font-size:12px;color:var(--muted)}.staffrow{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;margin-bottom:8px}.reasonbox{width:100%;min-height:74px;resize:vertical;margin-top:7px}.stafflist{max-height:240px;overflow:auto}.camera{display:none;width:100%;max-height:280px;background:#111;border-radius:10px;margin-top:10px}.foot{padding:22px;text-align:center;color:var(--muted);font-size:12px}@media(max-width:900px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.wrap{padding:12px}.activities{grid-template-columns:1fr}.staffrow{grid-template-columns:1fr}.scanbox{flex-direction:column}.stats .stat{padding:10px}}
+:root{--red:#123b60;--navy:#123b60;--blue:#1677c8;--bg:#fff;--ink:#182433;--muted:#637387;--line:#dce5ee}*{box-sizing:border-box}body{margin:0;background:var(--bg);font:15px/1.45 Helvetica,Arial,sans-serif;color:var(--ink)}header{background:linear-gradient(120deg,#0d2d4a,#1b527e);color:#fff;padding:20px clamp(16px,4vw,42px);display:flex;align-items:center;gap:18px;flex-wrap:wrap}header .brand{font-weight:900;font-size:25px;line-height:1.05;border-right:2px solid #ffffff88;padding-right:20px}header h1{font-size:clamp(20px,3vw,30px);margin:0}header p{margin:3px 0 0;opacity:.9}.wrap{max-width:1400px;margin:auto;padding:20px}.grid{display:grid;grid-template-columns: minmax(300px,390px) 1fr;gap:18px}.panel{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 3px 12px #173c5b0a;overflow:hidden}.panel h2{font-size:17px;color:white;background:var(--navy);margin:0;padding:12px 16px}.pad{padding:16px}.scanbox{display:flex;gap:8px}.scanbox input{flex:1;min-width:0}input,select,button{font:inherit;border-radius:9px;border:1px solid #c9d5e2;padding:11px 12px}input:focus,select:focus{outline:2px solid #8bc4f8;border-color:#1677c8}button{cursor:pointer;border:0;background:var(--blue);color:#fff;font-weight:700}button.secondary{background:#e9f1f8;color:#173b5d;border:1px solid #d1e0ed}button.red{background:var(--red)}button.green{background:#168553}button:disabled{opacity:.45;cursor:not-allowed}.hint{font-size:12px;color:var(--muted);margin:8px 0}.person{background:#f4f8fc;border:1px solid var(--line);padding:12px;border-radius:10px;margin:12px 0}.person strong{display:block;font-size:17px}.activities{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.activities button{min-height:56px;text-align:left;background:#f4f8fc;color:#183d60;border:1px solid #d7e4ef}.activities button span{display:block;font-size:12px;font-weight:500;color:#65778a}.activities button.active{outline:2px solid var(--blue);background:#e5f2ff}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:16px}.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px}.stat small{color:var(--muted)}.stat b{display:block;font-size:26px;color:var(--navy)}.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:12px}.toolbar input{max-width:240px}.tablewrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:720px}th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;font-size:13px}th{background:#f2f6fa;color:#25445f;position:sticky;top:0}td small{color:var(--muted)}.pill{display:inline-block;padding:3px 8px;border-radius:99px;background:#e6f3ec;color:#17683f;font-size:12px}.warn{background:#fff6df;color:#8a5a00}.empty{padding:26px;text-align:center;color:var(--muted)}.section{margin-top:18px}.notice{border-radius:10px;padding:10px 12px;margin-top:10px;font-size:13px;display:none}.notice.show{display:block}.notice.ok{background:#e7f6ec;color:#146b3a}.notice.err{background:#fff0f0;color:#a61b1b}.mini{font-size:12px;color:var(--muted)}.staffrow{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;margin-bottom:8px}.reasonbox{width:100%;min-height:74px;resize:vertical;margin-top:7px}.stafflist{max-height:240px;overflow:auto}.camera{display:none;width:100%;max-height:280px;background:#111;border-radius:10px;margin-top:10px}.foot{padding:22px;text-align:center;color:var(--muted);font-size:12px}@media(max-width:900px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.wrap{padding:12px}.activities{grid-template-columns:1fr}.staffrow{grid-template-columns:1fr}.scanbox{flex-direction:column}.stats .stat{padding:10px}}
 
 .login-overlay{position:fixed;inset:0;z-index:9999;background:#edf2f7;display:flex;align-items:center;justify-content:center;padding:18px}
 .login-card{width:min(440px,100%);background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 15px 45px #102b461c}
@@ -15,23 +15,48 @@
 
 /* === EraApps Modern UI Theme === */
 :root{
- --red:#d71920;--navy:#123b60;--blue:#1677c8;--bg:#fff;
+ --red:#123b60;--navy:#123b60;--blue:#1677c8;--bg:#fff;
  --ink:#172536;--muted:#697b8f;--line:#dce5ef;--surface:#fff;
  --shadow:0 8px 28px rgba(18,59,96,.07);--radius:16px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:164px}
+html{scroll-behavior:smooth;scroll-padding-top:94px}
 body{margin:0;background:#fff;font:15px/1.55 Helvetica,Arial,sans-serif;color:var(--ink)}
 header{
- position:sticky;top:0;z-index:1000;isolation:isolate;overflow:visible;min-height:148px;
- background:linear-gradient(125deg,#9f101b 0%,#d71920 58%,#ef4147 100%);
- color:#fff;padding:24px clamp(18px,4vw,48px);display:flex;align-items:center;gap:18px;flex-wrap:wrap;
- box-shadow:0 6px 24px rgba(151,16,27,.18)
+ position:sticky;top:0;z-index:1000;isolation:isolate;overflow:visible;height:54px;min-height:54px;
+ background:#7d9fd5;color:#fff;padding:4px 24px;display:flex;align-items:center;gap:12px;
+ box-shadow:0 1px 3px #15294d24
 }
-header:after{content:"";position:absolute;z-index:-1;width:300px;height:300px;border:1px solid #ffffff20;border-radius:50%;right:5%;top:-190px;box-shadow:0 0 0 35px #ffffff08,0 0 0 70px #ffffff06}
-header .brand{font-weight:900;font-size:27px;letter-spacing:-.8px;line-height:1.1;border-right:1px solid #ffffff70;padding:3px 22px 3px 0}
-header h1{font-size:clamp(21px,3vw,30px);letter-spacing:-.5px;margin:0;font-weight:800}
-header p{margin:4px 0 0;opacity:.88;font-size:13px;letter-spacing:.2px}
+header:after{content:none}
+header #headerLogo{display:block;width:100px;height:52px;max-width:100px!important;max-height:52px!important;object-fit:cover;object-position:center 48%;flex:none;filter:url(#logoWhite)}
+.login-logo{filter:url(#logoNavy)}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+header .brand{font-weight:900;font-size:19px;line-height:1;letter-spacing:0;border:0;padding:0;color:#fff}
+header h1{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);margin:0;color:#fff;font-size:27px;line-height:1.1;font-weight:750;letter-spacing:0;white-space:nowrap}
+header p{display:none}
+header #headerUserName{position:absolute;right:84px;top:50%;max-width:170px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;transform:translateY(-50%);font-size:11px;font-weight:600!important;line-height:1.2;text-align:right;color:#fff}
+.app-nav{position:sticky;top:54px;z-index:999;display:flex;align-items:stretch;justify-content:space-between;width:100%;height:28px;min-height:28px;padding:0 18px;background:#5d5a79;color:#fff;box-shadow:0 1px 3px #16152a30}
+.app-nav[hidden]{display:none!important}
+.app-nav-links,.app-nav-right{display:flex;align-items:stretch;gap:0;min-width:0}
+.app-nav-links{flex:1}
+.app-nav-right{margin-left:auto;flex:none;gap:12px}
+.app-nav .user-nav{margin:0}
+.app-nav button{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:28px;height:28px;margin:0!important;padding:0 14px;border:0;border-radius:0;background:transparent;color:#fff;box-shadow:none;font:700 12px/1 Helvetica,Arial,sans-serif;letter-spacing:0;white-space:nowrap}
+.app-nav button:hover:not(:disabled),.app-nav button.active,.app-nav button[aria-current="page"]{background:#4e4b69;color:#fff;box-shadow:none;transform:none;filter:none}
+.app-nav button:focus-visible{outline:2px solid #fff;outline-offset:-2px}
+.app-nav .nav-icon{width:40px;min-width:40px;padding:0}
+.app-nav .nav-icon svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.app-nav .admin-settings-menu{position:relative;display:flex;align-items:stretch;margin:0;z-index:1001}
+.app-nav .admin-settings-submenu{position:absolute;top:100%;right:0;left:auto;min-width:220px;padding:5px;background:#fff;border:1px solid #d8dce7;border-radius:0 0 5px 5px;box-shadow:0 8px 22px #16152a2e}
+.app-nav .admin-settings-submenu button{display:flex;justify-content:flex-start;width:100%;height:34px;min-height:34px;padding:0 12px;color:#34334a;text-align:left}
+.app-nav .admin-settings-submenu button:hover{background:#efeff5;color:#28273d}
+header #logoutButton{position:absolute!important;top:50%!important;transform:translateY(-50%)!important;right:18px!important;width:auto!important;min-width:0!important;height:28px!important;padding:0 8px!important;border:0!important;border-radius:0!important;background:transparent!important;color:#fff!important;box-shadow:none!important;font:700 12px/1 Helvetica,Arial,sans-serif!important;display:inline-flex!important;align-items:center!important}
+#appNav #rolePreviewButton{position:static!important;top:auto!important;right:auto!important;z-index:auto!important;width:auto!important;height:28px!important;margin:0!important;padding:0 10px!important;border:0!important;border-radius:0!important;background:transparent!important;color:#fff!important;box-shadow:none!important;font:700 12px/1 Helvetica,Arial,sans-serif!important}
+#appNav #rolePreviewButton:hover{background:#4e4b69!important;transform:none!important;box-shadow:none!important}
+#appNav #langMenu{position:static!important;top:auto!important;right:auto!important;z-index:auto!important;height:28px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:0 12px;color:#fff}
+#appNav #langButton{width:16px!important;height:9px!important;min-height:0!important;gap:2px!important;justify-content:center!important}
+#appNav #langButton i{width:12px!important;height:1.5px!important}
+#appNav #langLabel{font-size:11px!important;font-weight:700!important;line-height:1!important}
 .wrap{max-width:1480px;margin:auto;padding:26px clamp(14px,2.5vw,30px)}
 main [id]{scroll-margin-top:164px}
 .grid{display:grid;grid-template-columns:minmax(320px,410px) minmax(0,1fr);gap:20px;align-items:start}
@@ -53,7 +78,7 @@ button:hover:not(:disabled){filter:brightness(.96);transform:translateY(-1px);bo
 button:active:not(:disabled){transform:translateY(0)}
 button:focus-visible{outline:3px solid #8bc4f8;outline-offset:2px}
 button.secondary{background:#edf4fa;color:#214967;border-color:#d6e4ef;box-shadow:none}
-button.red{background:#c92b34;color:#fff}
+button.red{background:#123b60;color:#fff}
 button.green{background:#168553;color:#fff}
 button:disabled{opacity:.48;cursor:not-allowed;box-shadow:none}
 label{color:#30475c}
@@ -105,12 +130,12 @@ td small{color:var(--muted)}
 .login-card{position:relative;width:min(450px,100%);background:#fff;border:1px solid #e0e8f0;border-radius:22px;padding:clamp(24px,5vw,36px);box-shadow:0 24px 70px rgba(16,43,70,.14)}
 .login-card:before{content:none}
 .login-card h2{margin:0 0 7px;color:var(--navy);font-size:28px;letter-spacing:-.6px}
-.login-logo{display:block;width:150px;height:150px;max-width:55%;object-fit:contain;margin:0 auto 22px;border-radius:16px;box-shadow:0 8px 24px rgba(215,25,32,.12)}
+.login-logo{display:block;width:150px;height:150px;max-width:55%;object-fit:contain;margin:0 auto 22px;border-radius:16px;box-shadow:0 8px 24px rgba(18,59,96,.14)}
 @media(max-width:480px){.login-logo{width:125px;height:125px;margin-bottom:18px}}
 .login-card>p:first-of-type{margin:0 0 24px;color:var(--muted);font-size:13px}
 .login-card label{display:block;font-weight:700;font-size:13px;margin:15px 0 6px}
 .login-card input,.login-card select{width:100%;min-height:45px}
-.login-card button{width:100%;margin-top:20px;min-height:46px;background:linear-gradient(100deg,#b80f1d,#df202a)}
+.login-card button{width:100%;margin-top:20px;min-height:46px;background:linear-gradient(100deg,#0d2d4a,#1b527e)}
 .login-error{color:#b42318;font-size:13px;min-height:18px;margin-top:10px}
 .login-success{color:#176b37;font-size:13px;min-height:18px;margin-top:10px}
 .login-card #openPasswordReset{color:#fff}
@@ -135,7 +160,8 @@ td small{color:var(--muted)}
  .grid>.admin-only{display:grid;gap:18px}.grid>.admin-only>.panel{min-width:0}
 }
 @media(max-width:600px){
- header{padding:18px;gap:12px}header .brand{font-size:22px;padding-right:13px}header h1{font-size:20px}
+ header{padding:4px 10px;gap:8px}header #headerLogo{width:56px;height:40px;max-width:56px!important}header .brand{font-size:16px}header h1{font-size:19px}header #headerUserName{display:none}
+ .app-nav{padding:0 4px}.app-nav button{padding:0 8px;font-size:11px}.app-nav .nav-icon{width:34px;min-width:34px;padding:0}.app-nav .app-nav-right{gap:0}
  .wrap{padding:13px}.pad{padding:14px}.panel h2{padding:13px 15px}
  .activities{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.activities button{font-size:13px;padding:10px;min-height:70px}
  .stats{gap:9px}.stat{padding:13px}.stat b{font-size:25px}
@@ -146,14 +172,13 @@ td small{color:var(--muted)}
  table{min-width:680px}
 }
 .grid>section.admin-only{grid-column:1/-1}
-.admin-nav{display:flex;align-items:center;gap:8px;margin:0 0 16px}
+.admin-nav{display:flex;align-items:stretch;gap:0;margin:0}
 .admin-nav>button{margin:0!important}
-.admin-nav .admin-settings-menu{margin:0}
 .user-only .grid{grid-template-columns:minmax(300px,410px) minmax(0,1fr);align-items:start}
 .user-only #attendancePanel{grid-column:1;grid-row:1 / span 2}
 .user-only #activityPanel{grid-column:2;grid-row:1}
-.user-nav{margin-bottom:16px}
-.approval-count{display:inline-grid;place-items:center;min-width:22px;height:22px;margin-left:5px;padding:0 5px;border-radius:999px;background:#b42318;color:#fff;font-weight:800;font-size:12px}
+.user-nav{margin:0}
+.approval-count{display:inline-grid;place-items:center;min-width:22px;height:22px;margin-left:5px;padding:0 5px;border-radius:999px;background:#123b60;color:#fff;font-weight:800;font-size:12px}
 .user-only.user-promo-view .grid{display:block}
 @media(max-width:900px){
  .user-only .grid{grid-template-columns:minmax(0,1fr)}
@@ -298,7 +323,9 @@ td small{color:var(--muted)}
  </form>
 </div>
 
-<header><img id="headerLogo" alt="Logo" style="display:none;max-width:90px;max-height:60px;object-fit:contain"><div id="headerUserName" style="font-weight:750" hidden></div><div class="brand" id="brandText">EraApps</div><div><h1>Sistem Absensi Barcode</h1><p>EraApps · Sistem Absensi Web</p></div></header>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><filter id="logoWhite" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 1 0 0 0"/></filter><filter id="logoNavy" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 .9294 0 0 .0706  0 .7686 0 0 .2314  0 .6235 0 0 .3765  0 0 0 1 0"/></filter></defs></svg>
+<header><img id="headerLogo" alt="Logo EraApps" style="display:none;max-width:66px;max-height:44px;object-fit:contain"><div id="headerUserName" hidden></div><div class="brand" id="brandText">EraApps</div><h1>Apps Monitoring</h1><p>EraApps · Sistem Absensi Web</p><button type="button" id="logoutButton" class="secondary" aria-label="Log Out" title="Log Out" hidden>Log Out</button></header>
+<nav id="appNav" class="app-nav" aria-label="Navigasi akun" hidden><div id="userNav" class="app-nav-links user-nav" hidden><button type="button" id="userContentButton" class="nav-icon" title="Menu tambahan" aria-label="Menu tambahan"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.62 1.62"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3A5 5 0 0 0 11 21.07l1.62-1.62"/></svg><span class="sr-only">Menu tambahan</span></button><button type="button" id="userDashboardButton" class="active" aria-current="page">Dashboard</button><button type="button" id="userPromoButton">Promo</button><button type="button" id="userInformationButton">Informasi</button><button type="button" id="userAttendanceButton">Absensi</button><button type="button" id="userApprovalButton" hidden>Approval akun <span id="approvalCount" class="approval-count">0</span></button></div><nav id="adminNav" class="app-nav-links admin-nav admin-only" aria-label="Navigasi admin" hidden></nav><div id="appNavRight" class="app-nav-right"></div></nav>
 
 <div id="forcePasswordOverlay" class="login-overlay" style="display:none">
  <form id="forcePasswordForm" class="login-card">
@@ -308,13 +335,12 @@ td small{color:var(--muted)}
   <button type="submit">Simpan Password Baru</button><div id="forcePasswordError" class="login-error"></div>
  </form>
 </div>
-<main class="wrap" id="mainApp"><div id="userNav" class="actions user-nav" hidden><button type="button" id="userDashboardButton" class="secondary active">Dashboard</button><button type="button" id="userApprovalButton" class="secondary" hidden>Approval akun <span id="approvalCount" class="approval-count">0</span></button><button type="button" id="userAttendanceButton" class="secondary">Absensi</button><button type="button" id="userPromoButton" class="secondary">Promo / Informasi</button><button type="button" id="userContentButton" class="secondary">Menu tambahan</button></div>
+<main class="wrap" id="mainApp">
 <section id="highlightSlideshow" class="highlight-slideshow" hidden aria-label="Promo highlight"><div id="highlightStage" class="highlight-stage"><button type="button" class="highlight-arrow previous" id="highlightPrevious" aria-label="Promo sebelumnya">‹</button><img id="highlightImage" alt="Promo highlight"><button type="button" class="highlight-arrow next" id="highlightNext" aria-label="Promo berikutnya">›</button></div><div class="highlight-footer"><div id="highlightDots" class="highlight-dots" aria-label="Pilih promo highlight"></div><div class="highlight-copy"><span id="highlightCounter" class="mini"></span><h3 id="highlightTitle"></h3><p id="highlightText"></p></div><button type="button" class="secondary highlight-download" id="highlightDownload" aria-label="Download promo JPEG">Download JPEG</button></div></section>
 <section id="roleDashboardPanel" class="panel section" hidden><h2 id="roleDashboardTitle">Dashboard</h2><div class="pad"><p id="roleDashboardScope" class="mini"></p><h3>Anggota dalam lingkup Anda</h3><div id="roleMemberList"></div><h3 id="pendingAccountsTitle" hidden>Persetujuan Akun</h3><div id="pendingAccountsList"></div></div></section>
 <section id="userContentPanel" class="panel section" hidden><h2>Menu tambahan</h2><div class="pad" id="userContentList"></div></section>
 <section id="storeRegistrationPanel" class="panel section" hidden><h2>Pendaftaran ERO dan Promotor</h2><div class="pad" id="storeRegistrationHost"></div></section>
 <section id="roleInfoPanel" class="panel section" hidden><h2>Terbitkan Informasi untuk Lingkup Anda</h2><div class="pad"><form id="roleInfoForm"><label>Judul<input id="roleInfoTitle" maxlength="160" required></label><label>Informasi</label><div class="actions rich-toolbar"><button type="button" data-editor-command="bold" aria-label="Bold"><b>B</b></button><button type="button" data-editor-command="italic" aria-label="Italic"><i>I</i></button><button type="button" data-editor-command="underline" aria-label="Underline"><u>U</u></button><button type="button" data-editor-command="justifyLeft" aria-label="Rata kiri">Rata kiri</button><button type="button" data-editor-command="justifyCenter" aria-label="Rata tengah">Rata tengah</button><button type="button" data-editor-command="justifyRight" aria-label="Rata kanan">Rata kanan</button><label>Warna <input id="roleInfoColor" type="color" value="#222222"></label><label>Ukuran <select id="roleInfoFontSize"><option value="14">14</option><option value="16" selected>16</option><option value="18">18</option><option value="24">24</option><option value="32">32</option></select></label></div><div id="roleInfoBody" class="rich-editor" contenteditable="true" role="textbox" aria-multiline="true" aria-label="Informasi" data-placeholder="Tulis informasi untuk area Anda"></div><button type="submit">Terbitkan</button><div id="roleInfoStatus" class="mini" role="status"></div></form></div></section>
-<nav id="adminNav" class="admin-nav admin-only" aria-label="Navigasi admin"></nav>
 <div class="stats admin-only"><div class="stat"><small>Scan hari ini</small><b id="statScans">0</b></div><div class="stat"><small>Karyawan terdaftar</small><b id="statStaff">5</b></div><div class="stat"><small>Sudah masuk</small><b id="statPresent">0</b></div><div class="stat"><small>Belum pulang</small><b id="statOpen">0</b></div></div>
 <div id="dashboardFilters" class="dashboard-filters admin-only"><label>LOB<select id="dashboardFilterLob"><option value="">Semua LOB</option></select></label><label>TSH<select id="dashboardFilterTsh"><option value="">Semua TSH</option></select></label><label>CODE<select id="dashboardFilterCode"><option value="">Semua CODE</option></select></label><label>STORE NAME<select id="dashboardFilterStore"><option value="">Semua STORE NAME</option></select></label><button type="button" class="secondary" id="resetDashboardFilters">Reset Filter</button></div>
 <div id="adminDashboardCharts" class="chart-grid admin-only"><section class="chart-panel"><h2>Tren Absensi · 7 Hari</h2><div class="chart-canvas"><canvas id="adminTrendChart" aria-label="Tren absensi tujuh hari" role="img"></canvas></div></section><section class="chart-panel"><h2>Komposisi Aktivitas · Tanggal Laporan</h2><div class="chart-canvas"><canvas id="adminActivityChart" aria-label="Komposisi aktivitas pada tanggal laporan" role="img"></canvas></div></section></div>
@@ -327,7 +353,7 @@ td small{color:var(--muted)}
 <video id="photoVideo" class="camera" playsinline></video><canvas id="photoCanvas" hidden></canvas><img id="photoPreview" class="photo-preview" alt="Foto bukti absensi">
 <div class="hint">Absensi tidak bisa dikirim sebelum foto berhasil diambil.</div>
 <label for="reason" style="display:block;margin-top:14px"><b>Reason / Alasan setiap absensi</b></label><textarea id="reason" class="reasonbox" placeholder="Wajib diisi. Contoh: mulai shift pagi, istirahat makan, keperluan pribadi, ke toilet, atau selesai shift."></textarea><div class="hint">Alasan wajib diisi untuk setiap aktivitas absensi dan akan masuk ke log serta laporan.</div><div class="actions"><button class="green" id="record" disabled>Catat Absensi</button><button class="secondary" id="clearSelection">Reset pilihan</button></div><div class="notice" id="notice"></div></div></section>
-<div id="promoPanel" class="panel section" hidden><h2>Promo / Informasi Toko</h2><div class="pad">
+<div id="promoPanel" class="panel section" hidden><h2 id="promoPanelTitle">Promo</h2><div class="pad">
  <label class="promo-search">Cari folder atau promo<input id="promoSearch" type="search" placeholder="Ketik nama folder, judul, atau informasi" autocomplete="off"></label>
  <div id="promoList"></div>
 </div></div>
@@ -392,7 +418,7 @@ td small{color:var(--muted)}
  <hr><h3>Tampilan Header & Background</h3>
  <div class="settings-grid">
   <label>Nama header<input id="settingHeader" placeholder="Sistem Absensi Barcode"></label>
-  <label>Warna header<input id="settingHeaderColor" type="color" value="#d71920"></label>
+  <label>Warna header<input id="settingHeaderColor" type="color" value="#7d9fd5"></label>
   <label>Warna background solid<input id="settingBgColor" type="color" value="#f3f6fa"></label>
   <label>Foto background (opsional)<input id="settingBgImage" type="file" accept="image/*"></label>
   <label>Logo header (opsional)<input id="settingLogo" type="file" accept="image/*"></label>
@@ -412,7 +438,7 @@ td small{color:var(--muted)}
   <label>Tanggal (opsional)<input id="deleteDate" type="date"></label>
  </div><div class="actions"><button type="button" class="red" id="deleteFilteredHistory">Hapus Riwayat Sesuai Filter</button><button type="button" class="red" id="deleteAllHistory">Hapus Semua Riwayat Absensi</button></div>
 </div></div>
-<div id="adminPromoPanel" class="panel section admin-only" hidden><h2>Promo / Informasi</h2><div class="pad">
+<div id="adminPromoPanel" class="panel section admin-only" hidden><h2 id="adminPromoTitle">Promo</h2><div class="pad">
  <h3>Folder promo dan file</h3>
  <form id="promoFolderForm" class="actions"><input id="promoFolderName" required maxlength="60" placeholder="Nama folder baru"><button type="submit">Tambah Folder</button></form>
  <div class="actions"><label class="secondary small-btn folder-upload">Pilih Folder dari PC<input id="promoDirectoryUpload" type="file" webkitdirectory directory multiple></label><button type="button" id="saveDirectoryUpload" disabled>Simpan Folder</button><span id="directoryUploadStatus" class="mini"></span></div>
@@ -464,7 +490,7 @@ function renderPerson(){let p=$('person');if(!selected){p.innerHTML='<strong>Bel
 function notify(msg,type){let n=$('notice');n.textContent=msg;n.className='notice show '+type}
 let uploadToastTimer=null;
 function notifyUploadSaved(message='Upload berhasil disimpan'){const toast=$('uploadToast');$('uploadToastMessage').textContent=message;toast.hidden=false;if(uploadToastTimer)clearTimeout(uploadToastTimer);uploadToastTimer=setTimeout(()=>{toast.hidden=true},3500)}
-const chartColors=['#d71920','#1677c8','#168553','#e39b16','#7963c4','#0d9a9a','#d15b91','#637387'];
+const chartColors=['#123b60','#1677c8','#168553','#e39b16','#7963c4','#0d9a9a','#d15b91','#637387'];
 let adminTrendChart=null,adminActivityChart=null,userDailyChart=null,userActivityChart=null,roleReportTrendChart=null,roleReportActivityChart=null;
 const roleReportPanel=document.createElement('section');
 roleReportPanel.id='roleReportPanel';roleReportPanel.className='panel section';roleReportPanel.hidden=true;
@@ -486,7 +512,7 @@ function renderAdminCharts(sourceLogs=logs){
 function renderUserCharts(own){
  const [year,month]=($('userMonth').value||today().slice(0,7)).split('-').map(Number),days=new Date(year,month,0).getDate(),daily=Array(days).fill(0);
  own.forEach(item=>{const day=Number(item.date.slice(8,10));if(day>=1&&day<=days)daily[day-1]++});
- userDailyChart=replaceChart('userDailyChart',userDailyChart,{type:'bar',data:{labels:daily.map((_,index)=>String(index+1)),datasets:[{label:'Aktivitas',data:daily,backgroundColor:'rgba(22,119,200,.78)',hoverBackgroundColor:'#d71920',borderRadius:5,maxBarThickness:22}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},title:{display:true,text:'Tanggal'}},y:{beginAtZero:true,ticks:{precision:0,stepSize:1},grid:{color:'#e9eef4'}}}}},own.length>0,'Belum ada absensi pada bulan ini.');
+ userDailyChart=replaceChart('userDailyChart',userDailyChart,{type:'bar',data:{labels:daily.map((_,index)=>String(index+1)),datasets:[{label:'Aktivitas',data:daily,backgroundColor:'rgba(22,119,200,.78)',hoverBackgroundColor:'#123b60',borderRadius:5,maxBarThickness:22}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},title:{display:true,text:'Tanggal'}},y:{beginAtZero:true,ticks:{precision:0,stepSize:1},grid:{color:'#e9eef4'}}}}},own.length>0,'Belum ada absensi pada bulan ini.');
  const counts=new Map();own.forEach(item=>counts.set(item.action,(counts.get(item.action)||0)+1));
  userActivityChart=replaceChart('userActivityChart',userActivityChart,{type:'doughnut',data:{labels:[...counts.keys()],datasets:[{data:[...counts.values()],backgroundColor:chartColors,borderColor:'#fff',borderWidth:3,hoverOffset:7}]},options:{responsive:true,maintainAspectRatio:false,cutout:'64%',plugins:{legend:{position:'bottom',labels:{usePointStyle:true,pointStyle:'circle',padding:16}}}}},counts.size>0,'Belum ada aktivitas pada bulan ini.');
 }
@@ -552,7 +578,7 @@ let promos=JSON.parse(localStorage.getItem(PROMOKEY)||'[]').map(p=>({...p,folder
 let promoFolders=JSON.parse(localStorage.getItem(PROMOFOLDERKEY)||'[]');
 if(!Array.isArray(promoFolders))promoFolders=[];
 ['Umum','Highlight',...promos.map(p=>p.folder)].forEach(folder=>{if(!promoFolders.some(x=>x.toLowerCase()===folder.toLowerCase()))promoFolders.push(folder)});
-let highlightIndex=0,highlightTimer=null,openPromoFolder='',openAdminPromoFolder='';
+let highlightIndex=0,highlightTimer=null,openPromoFolder='',openAdminPromoFolder='',promoViewMode='promo',adminPromoMode='promo';
 let pendingDirectoryFiles=[];
 let currentUser=null, photoData='', photoStream=null, pendingPhotoFile=null;
 
@@ -597,17 +623,17 @@ function directoryFileInfo(file){const relative=String(file.webkitRelativePath||
 function savePromoData(nextPromos=promos,nextFolders=promoFolders){try{localStorage.setItem(PROMOKEY,JSON.stringify(nextPromos));localStorage.setItem(PROMOFOLDERKEY,JSON.stringify(nextFolders));promos=nextPromos;promoFolders=nextFolders;return true}catch(e){alert('Penyimpanan browser penuh. Gunakan gambar yang lebih kecil atau hapus file lama.');return false}}
 function applyAppearance(){
  const h=document.querySelector('header'), title=document.querySelector('header h1');
- h.style.background=appSettings.headerColor||'linear-gradient(120deg,#b80f1d,#e31b2b)';
- if(appSettings.headerColor) h.style.background=appSettings.headerColor;
- if(appSettings.headerTitle) title.textContent=appSettings.headerTitle;
+ const legacyHeaderColors=['#d71920','#b80f1d','#9f101b'],savedHeaderColor=String(appSettings.headerColor||'').toLowerCase();
+ h.style.background=appSettings.headerColor&&!legacyHeaderColors.includes(savedHeaderColor)?appSettings.headerColor:'#7d9fd5';
+ title.textContent=appSettings.headerTitle&&appSettings.headerTitle!=='Sistem Absensi Barcode'?appSettings.headerTitle:'Apps Monitoring';
  const storeName=appSettings.storeName||'M.H.A WEB';
  const sub=document.querySelector('header p'); if(sub) sub.textContent=storeName+' · EraApps';
  const storeInput=$('newStore'); if(storeInput && !storeInput.value) storeInput.value=storeName;
- const headerSetting=$('settingHeader'); if(headerSetting && !headerSetting.value) headerSetting.value=appSettings.headerTitle||'Sistem Absensi Barcode';
- const colorSetting=$('settingHeaderColor'); if(colorSetting) colorSetting.value=appSettings.headerColor||'#d71920';
+ const headerSetting=$('settingHeader'); if(headerSetting && !headerSetting.value) headerSetting.value=appSettings.headerTitle&&appSettings.headerTitle!=='Sistem Absensi Barcode'?appSettings.headerTitle:'Apps Monitoring';
+ const colorSetting=$('settingHeaderColor'); if(colorSetting) colorSetting.value=appSettings.headerColor&&!legacyHeaderColors.includes(savedHeaderColor)?appSettings.headerColor:'#7d9fd5';
  const bgSetting=$('settingBgColor'); if(bgSetting) bgSetting.value=appSettings.bgColor||'#f3f6fa';
  document.body.style.background=appSettings.bgImage?`center / cover fixed url("${appSettings.bgImage}")`: (appSettings.bgColor||'var(--bg)');
- if(appSettings.logo){$('headerLogo').src=appSettings.logo;$('headerLogo').style.display='block';$('brandText').style.display='none'}
+ if(appSettings.logo){$('headerLogo').src=appSettings.logo;$('headerLogo').style.display='block';$('brandText').style.display='none'}else{const loginLogo=$('loginForm').querySelector('.login-logo');if(loginLogo){$('headerLogo').src=loginLogo.src;$('headerLogo').style.display='block';$('brandText').style.display='none'}}
  $('loginBrand').hidden=true;
  const loginCredit=$('loginBrand').nextElementSibling;
  const loginCreditText=loginCredit?.id==='loginCreditRow'?loginCredit.querySelector('p'):loginCredit;
@@ -618,7 +644,9 @@ function showUserPage(page){
  const userType=currentUser.profile?.user_type||currentUser.account?.userType||'ERO';
  if(page==='registration'&&userType!=='Store Leader')page='dashboard';
  if(page==='attendance'&&userType==='LOB')page='dashboard';
- const promoVisible=page==='promo';
+ const promoVisible=page==='promo'||page==='information';
+ const informationVisible=page==='information';
+ promoViewMode=informationVisible?'information':'promo';
  const contentVisible=page==='content';
  const dashboardVisible=page==='dashboard';
  const registrationVisible=page==='registration';
@@ -641,17 +669,19 @@ function showUserPage(page){
  $('userDashboardButton').classList.toggle('active',dashboardVisible);
  $('userApprovalButton').classList.toggle('active',false);
  $('userAttendanceButton').classList.toggle('active',!promoVisible&&!contentVisible&&!dashboardVisible);
- $('userPromoButton').classList.toggle('active',promoVisible);
+ $('userPromoButton').classList.toggle('active',promoVisible&&!informationVisible);
+ $('userInformationButton').classList.toggle('active',informationVisible);
  $('userContentButton').classList.toggle('active',contentVisible);
  $('userRegistrationButton').classList.toggle('active',registrationVisible);
  if(dashboardVisible){renderRoleDashboard();showHighlightSlide(highlightIndex)}
  if(page==='approval'){showUserPage('dashboard');$('userApprovalButton').classList.add('active');$('pendingAccountsTitle').scrollIntoView({behavior:'smooth',block:'start'})}
- if(promoVisible)renderPromos();
+ if(promoVisible){$('promoPanelTitle').textContent=informationVisible?'Informasi':'Promo';renderPromos()}
 }
 $('userDashboardButton').onclick=()=>showUserPage('dashboard');
 $('userApprovalButton').onclick=()=>showUserPage('approval');
 $('userAttendanceButton').onclick=()=>showUserPage('attendance');
 $('userPromoButton').onclick=()=>showUserPage('promo');
+$('userInformationButton').onclick=()=>showUserPage('information');
 $('userContentButton').onclick=()=>showUserPage('content');
 const userRegistrationButton=document.createElement('button');userRegistrationButton.type='button';userRegistrationButton.id='userRegistrationButton';userRegistrationButton.className='secondary';userRegistrationButton.textContent='Pendaftaran ERO/Promotor';userRegistrationButton.hidden=true;
 $('userNav').appendChild(userRegistrationButton);
@@ -767,6 +797,7 @@ function enterApp(role,account=null){
  currentUser={role,account};
  $('loginOverlay').style.display='none';
  document.body.classList.toggle('user-only',role==='user');
+ $('appNav').hidden=false;
  $('adminNav').hidden=role!=='admin';
  $('userNav').hidden=role!=='user';
  $('attendancePanel').hidden=role==='admin';
@@ -1058,6 +1089,7 @@ async function downloadPromoFolder(folder,jpegImages=false){
  }catch(err){alert('Folder gagal disiapkan untuk diunduh.')}
 }
 function promoDisplayTitle(p){const title=String(p.title||'').trim(),fileStem=String(p.fileName||'').replace(/\.[^.]+$/,'').trim();return fileStem&&title.toLowerCase()===fileStem.toLowerCase()?'':title}
+function promoMatchesView(item,mode){return mode==='information'?(!item.image&&!item.fileData):Boolean(item.image||item.fileData)}
 function promoCard(p,admin=false){const title=promoDisplayTitle(p),canDownload=(currentUser?.role==='admin'||currentUser?.role==='user')&&!p.isHighlight&&!isHighlightFolder(p.folder),canManage=admin||currentUser?.role==='admin'||currentUser?.profile?.role==='admin';return `<article class="promo-file">${title?`<b>${esc(title)}</b>`:''}<div class="mini">${esc(p.created||'')}</div>${p.image?`<img src="${esc(p.image)}" alt="Foto promo" loading="lazy">${canDownload?`<button type="button" class="secondary small-btn" data-download-jpeg="${esc(p.id)}">Download JPEG</button>`:''}`:p.fileData?`<div class="mini">File tersedia</div>${canDownload?`<button type="button" class="secondary small-btn" data-download-file="${esc(p.id)}">Download file</button>`:''}`:''}<div style="white-space:pre-wrap">${sanitizeRichText(p.text||'')}</div>${canManage?`<button type="button" class="red small-btn" data-delete-promo="${esc(p.id)}">Hapus promo</button>`:''}</article>`}
  function promoFolderExpiryDate(folder){return appSettings.promoFolderExpiry?.[folder]||''}
  function isPromoFolderExpired(folder){return Object.entries(appSettings.promoFolderExpiry||{}).some(([path,expiry])=>(folder===path||folder.startsWith(`${path}/`))&&expiry&&Date.parse(`${expiry}T23:59:59.999`)<Date.now())}
@@ -1084,7 +1116,7 @@ function renderAdminPromoFolders(){
  $('promoFolderSelect').innerHTML=promoFolders.map(folder=>`<option value="${esc(folder)}">${esc(folder)}</option>`).join('');
  if(promoFolders.includes(selectedFolder))$('promoFolderSelect').value=selectedFolder;else $('promoFolderSelect').value=promoFolders.includes('Umum')?'Umum':promoFolders[0]||'';
  target.innerHTML=promoFolders.map(folder=>{
-  const files=promos.filter(item=>item.folder===folder),cards=files.map(item=>promoCard(item,true)).join(''),expanded=openAdminPromoFolder===folder;
+  const files=promos.filter(item=>item.folder===folder&&promoMatchesView(item,adminPromoMode)),cards=files.map(item=>promoCard(item,true)).join(''),expanded=openAdminPromoFolder===folder;
   return `<section class="promo-folder"><div class="promo-folder-head"><button type="button" class="promo-folder-toggle" data-admin-folder-toggle="${esc(folder)}" aria-expanded="${expanded}"><span class="promo-chevron" aria-hidden="true">›</span><strong>${esc(folder)}${folder.toLowerCase()==='highlight'?' · Slideshow':''}</strong><span class="mini">${files.length} file</span></button><div class="promo-folder-tools"><label class="promo-folder-expiry">Berakhir<input type="date" data-folder-expiry="${esc(folder)}" value="${esc(promoFolderExpiryDate(folder))}" aria-label="Tanggal akhir folder ${esc(folder)}"></label><button type="button" class="secondary small-btn" data-download-folder="${esc(folder)}">Download ZIP folder</button><label class="secondary small-btn folder-upload">Pilih file<input type="file" accept="image/*" multiple data-folder-upload="${esc(folder)}"></label><button type="button" class="small-btn" data-save-folder-upload="${esc(folder)}" disabled>Simpan Upload</button><button type="button" class="red small-btn" data-delete-folder="${esc(folder)}">Hapus folder</button></div></div><div class="promo-folder-content" ${expanded?'':'hidden'}><div class="mini"><span data-upload-status="${esc(folder)}"></span></div><div class="promo-file-grid">${cards||'<div class="empty">Folder masih kosong.</div>'}</div></div></section>`
  }).join('');
  target.querySelectorAll('[data-admin-folder-toggle]').forEach(button=>{
@@ -1121,7 +1153,7 @@ function renderPromos(){
  if(highlightItems.length>1&&currentUser?.role==='user')highlightTimer=setInterval(()=>showHighlightSlide(highlightIndex+1),5000);
  $('highlightPrevious').onclick=()=>showHighlightSlide(highlightIndex-1);$('highlightNext').onclick=()=>showHighlightSlide(highlightIndex+1);
  const query=$('promoSearch').value.trim().toLowerCase(),regularFolders=promoFolders.filter(folder=>!isHighlightFolder(folder)&&!isPromoFolderExpired(folder));
- const groups=regularFolders.map(folder=>{const items=promos.filter(item=>item.folder===folder),folderMatches=folder.toLowerCase().includes(query),matches=query&&!folderMatches?items.filter(item=>[item.title,item.fileName,item.text].join(' ').replace(/<[^>]*>/g,' ').toLowerCase().includes(query)):items;return {folder,items:matches}}).filter(group=>group.items.length);
+ const groups=regularFolders.map(folder=>{const items=promos.filter(item=>item.folder===folder&&promoMatchesView(item,promoViewMode)),folderMatches=folder.toLowerCase().includes(query),matches=query&&!folderMatches?items.filter(item=>[item.title,item.fileName,item.text].join(' ').replace(/<[^>]*>/g,' ').toLowerCase().includes(query)):items;return {folder,items:matches}}).filter(group=>group.items.length);
  const canDownload=currentUser?.role==='admin'||currentUser?.role==='user';
  if(!groups.some(group=>group.folder===openPromoFolder))openPromoFolder='';
  target.innerHTML=groups.length?`<div class="promo-categories">${groups.map(group=>{const expanded=openPromoFolder===group.folder;return `<section class="promo-category"><button type="button" class="promo-category-toggle" data-promo-folder-toggle="${esc(group.folder)}" aria-expanded="${expanded}"><span class="promo-category-name"><strong>${esc(group.folder)}</strong><small>${group.items.length} promo</small></span><span class="promo-chevron" aria-hidden="true">›</span></button><div class="promo-category-content" ${expanded?'':'hidden'}><div class="promo-folder-tools">${canDownload?`<button type="button" class="secondary small-btn" data-download-user-folder="${esc(group.folder)}">Download Folder JPEG</button>`:''}</div><div class="promo-file-grid">${group.items.map(promoCard).join('')}</div></div></section>`}).join('')}</div>`:(promos.length?(query?'<div class="empty">Tidak ada promo yang cocok dengan pencarian.</div>':'<div class="empty">Promo Highlight tampil pada slideshow di atas.</div>'):'<div class="empty">Belum ada promo atau informasi.</div>');
@@ -1215,7 +1247,14 @@ renderAccounts=function(){prevRenderAccounts();refreshDeleteFilters();const list
 
 function showAdminPage(page){
  if(currentUser?.role!=='admin')return;
+ document.querySelectorAll('[data-admin-main-page]').forEach(button=>{const active=button.dataset.adminMainPage===page;button.classList.toggle('active',active);if(active)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current')});
  const dashboardVisible=page==='dashboard';
+ const promoVisible=page==='promo'||page==='information';
+ adminPromoMode=page==='information'?'information':'promo';
+ $('appNav').hidden=false;
+ $('adminNav').hidden=false;
+ $('adminPromoPanel').hidden=!promoVisible;
+ if(promoVisible){$('adminPromoTitle').textContent=page==='information'?'Informasi':'Promo';renderPromos()}
  $('highlightSlideshow').hidden=!dashboardVisible;
  document.querySelector('.stats').hidden=!dashboardVisible;
  $('dashboardFilters').hidden=!dashboardVisible;
@@ -1223,18 +1262,21 @@ function showAdminPage(page){
  document.querySelector('.grid').hidden=!dashboardVisible;
  $('accountsPanel').hidden=page!=='accounts';
  $('settingsPanel').hidden=page!=='settings';
- $('adminPromoPanel').hidden=page!=='promo';
  $('passwordResetPanel').hidden=page!=='passwordResetRequests';
  $('adminContentPanel').hidden=page!=='content';
  const submenu=$('adminSettingsSubmenu');
  if(submenu){submenu.hidden=true;$('adminSettingsToggle').setAttribute('aria-expanded','false')}
 }
-const dashboardButton=document.createElement('button');dashboardButton.className='secondary admin-only';dashboardButton.textContent='Dashboard';
+const dashboardButton=document.createElement('button');dashboardButton.className='secondary admin-only';dashboardButton.dataset.adminMainPage='dashboard';dashboardButton.textContent='Dashboard';
 dashboardButton.onclick=()=>{showAdminPage('dashboard');render()};
 document.getElementById('adminNav').appendChild(dashboardButton);
+const adminPromoButton=document.createElement('button');adminPromoButton.type='button';adminPromoButton.dataset.adminMainPage='promo';adminPromoButton.textContent='Promo';adminPromoButton.onclick=()=>showAdminPage('promo');
+const adminInformationButton=document.createElement('button');adminInformationButton.type='button';adminInformationButton.dataset.adminMainPage='information';adminInformationButton.textContent='Informasi';adminInformationButton.onclick=()=>showAdminPage('information');
+const adminContentButton=document.createElement('button');adminContentButton.type='button';adminContentButton.className='nav-icon';adminContentButton.dataset.adminMainPage='content';adminContentButton.title='Menu tambahan';adminContentButton.setAttribute('aria-label','Menu tambahan');adminContentButton.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.62 1.62"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3A5 5 0 0 0 11 21.07l1.62-1.62"/></svg><span class="sr-only">Menu tambahan</span>';adminContentButton.onclick=()=>{showAdminPage('content');renderCustomContent(window.ERAAPPS_CUSTOM_CONTENT||[],true)};
+document.getElementById('adminNav').prepend(adminContentButton);document.getElementById('adminNav').append(adminPromoButton,adminInformationButton);
 const settingsMenu=document.createElement('div');settingsMenu.id='adminSettingsMenu';settingsMenu.className='admin-settings-menu admin-only';
-settingsMenu.innerHTML='<button type="button" id="adminSettingsToggle" class="secondary" aria-haspopup="menu" aria-expanded="false"><span aria-hidden="true">⚙</span> <span>Setting</span></button><div id="adminSettingsSubmenu" class="admin-settings-submenu" role="menu" hidden><button type="button" data-admin-page="settings" role="menuitem">Tampilan & Keamanan</button><button type="button" data-admin-page="accounts" role="menuitem">Akun & Pendaftaran</button><button type="button" data-admin-page="promo" role="menuitem">Promo / Informasi</button><button type="button" data-admin-page="passwordResetRequests" role="menuitem">Persetujuan Reset Password <span id="passwordResetCount" class="approval-count"></span></button><button type="button" data-admin-page="content" role="menuitem">Menu tambahan</button></div>';
-document.getElementById('adminNav').appendChild(settingsMenu);
+settingsMenu.innerHTML='<button type="button" id="adminSettingsToggle" aria-haspopup="menu" aria-expanded="false"><span>Setting</span></button><div id="adminSettingsSubmenu" class="admin-settings-submenu" role="menu" hidden><button type="button" data-admin-page="settings" role="menuitem">Tampilan & Keamanan</button><button type="button" data-admin-page="accounts" role="menuitem">Akun & Pendaftaran</button><button type="button" data-admin-page="passwordResetRequests" role="menuitem">Persetujuan Reset Password <span id="passwordResetCount" class="approval-count"></span></button></div>';
+document.getElementById('appNavRight').appendChild(settingsMenu);
 const settingsToggle=$('adminSettingsToggle'),settingsSubmenu=$('adminSettingsSubmenu');
 settingsToggle.onclick=event=>{event.stopPropagation();settingsSubmenu.hidden=!settingsSubmenu.hidden;settingsToggle.setAttribute('aria-expanded',String(!settingsSubmenu.hidden))};
 settingsSubmenu.querySelectorAll('[data-admin-page]').forEach(button=>button.onclick=()=>{
@@ -1274,7 +1316,7 @@ function renderRolePreview(){
  const scopeText=[scope.lob&&`LOB ${scope.lob}`,scope.tsh&&`TSH ${scope.tsh}`,scope.storeName&&`${scope.storeName} (${scope.storeCode})`].filter(Boolean).join(' · ')||'Pilih akun contoh untuk melihat scope';
  $('rolePreviewBody').innerHTML=`<div class="role-preview-topline"><strong>${esc(scope.name||scope.username)} · ${esc(type)}</strong><span>${esc(scopeText)}</span></div><nav class="role-preview-nav" aria-label="Navigasi preview">${modules.map(item=>`<span>${esc(item)}</span>`).join('')}</nav><div class="role-preview-columns"><section class="role-preview-section"><h3>Anggota dalam lingkup</h3>${members.length?members.map(item=>`<p>${esc(item.name||item.username)} · ${esc(item.userType)} · ${esc(item.storeName||item.lob||item.tsh||'')}</p>`).join(''):'<p>Belum ada anggota pada scope contoh ini.</p>'}</section><section class="role-preview-section"><h3>Highlight</h3><p>${highlightCount} gambar tersedia · hanya tampil, tanpa unduh untuk user.</p><h3>Promo / Informasi</h3><p>${visiblePromos.length} item tersedia · ${type==='Promotor'?'tanpa unduh':'unduh promo tersedia'}.</p></section><section class="role-preview-section"><h3>Approval akun</h3><p>${approvals.length?`Dapat menyetujui: ${esc(approvals.join(', '))}`:'Tidak tersedia untuk role ini.'}</p><h3>Informasi</h3><p>${type==='LOB'?'Editor informasi tersedia.':'Tidak ada editor informasi.'}</p></section><section class="role-preview-section"><h3>Menu tambahan</h3><p>${customItems.length} item tersedia untuk role ini.</p></section></div>`;
 }
-const rolePreviewButton=document.createElement('button');rolePreviewButton.id='rolePreviewButton';rolePreviewButton.className='admin-only';rolePreviewButton.type='button';rolePreviewButton.innerHTML='<span aria-hidden="true">◉</span> <span>Preview</span>';rolePreviewButton.setAttribute('aria-label','Preview tampilan role');rolePreviewButton.hidden=true;document.querySelector('header').appendChild(rolePreviewButton);
+const rolePreviewButton=document.createElement('button');rolePreviewButton.id='rolePreviewButton';rolePreviewButton.className='admin-only';rolePreviewButton.type='button';rolePreviewButton.innerHTML='<span aria-hidden="true">◉</span> <span>Preview</span>';rolePreviewButton.setAttribute('aria-label','Preview tampilan role');rolePreviewButton.hidden=true;document.getElementById('adminNav').appendChild(rolePreviewButton);
 rolePreviewButton.onclick=()=>{if(currentUser?.role!=='admin')return;updateRolePreviewAccounts();$('rolePreviewDialog').showModal()};
 $('rolePreviewSelect').addEventListener('change',updateRolePreviewAccounts);
 $('rolePreviewAccount').addEventListener('change',renderRolePreview);
