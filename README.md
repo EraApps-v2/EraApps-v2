@@ -1,16 +1,26 @@
-## Hi there 👋
+# EraApps
 
-<!--
-**EraApps-v2/EraApps-v2** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Web application for barcode attendance, employee access, store promotions, and dashboard reporting.
 
-Here are some ideas to get you started:
+## Files
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+- `index.html`: application interface and client-side logic.
+- `supabase-cloud.js`: Supabase authentication, database, and storage integration.
+- `supabase-config.js`: Supabase project URL and publishable key used by the frontend.
+- `i18n.js`: interface translations.
+- `eraapps-template/`: isolated saleable frontend template and static demo.
+- `eraapps-template.zip`: template archive.
+
+## Run locally
+
+Open `index.html` in a browser. Cloud login and data access require the configured Supabase project and its schema, Row Level Security policies, Edge Functions, and Storage buckets.
+
+## Deploy with Netlify
+
+This repository is configured to publish the repository root as a static site. Connect the GitHub repository to the existing Netlify project `eraapps`, use branch `main`, and leave the build command empty. Future pushes to `main` will start deployments when the Netlify team is allowed to deploy.
+
+From VS Code, stage and commit the changes, then use **Push** or **Sync Changes** to send them to GitHub. Netlify deploys automatically after the repository is connected.
+
+## Security
+
+The Supabase publishable key is intentionally used in frontend code. Keep database access protected by Row Level Security and server-side authorization. Never place a Supabase service-role key or user passwords in this repository.
