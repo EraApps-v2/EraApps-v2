@@ -8,6 +8,7 @@ Web application for barcode attendance, employee access, store promotions, and d
 - `supabase-cloud.js`: Supabase authentication, database, and storage integration.
 - `supabase-config.js`: Supabase project URL and publishable key used by the frontend.
 - `i18n.js`: interface translations.
+- `EraApps-VSCode/`: standalone EraApps application available from the signed-in navigation menu.
 - `eraapps-template/`: isolated saleable frontend template and static demo.
 - `eraapps-template.zip`: template archive.
 

@@ -42,6 +42,8 @@ header #headerUserName{position:absolute;right:84px;top:50%;max-width:170px;over
 .app-nav-right{margin-left:auto;flex:none;gap:12px}
 .app-nav .user-nav{margin:0}
 .app-nav button{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:28px;height:28px;margin:0!important;padding:0 14px;border:0;border-radius:0;background:transparent;color:#fff;box-shadow:none;font:700 12px/1 Helvetica,Arial,sans-serif;letter-spacing:0;white-space:nowrap}
+.app-nav .vscode-menu-link{display:inline-flex;align-items:center;justify-content:center;height:28px;padding:0 14px;color:#fff;font:700 12px/1 Helvetica,Arial,sans-serif;text-decoration:none;white-space:nowrap}
+.app-nav .vscode-menu-link:hover,.app-nav .vscode-menu-link:focus-visible{background:#4e4b69;color:#fff}
 .app-nav button:hover:not(:disabled),.app-nav button.active,.app-nav button[aria-current="page"]{background:#4e4b69;color:#fff;box-shadow:none;transform:none;filter:none}
 .app-nav button:focus-visible{outline:2px solid #fff;outline-offset:-2px}
 .app-nav .nav-icon{width:40px;min-width:40px;padding:0}
@@ -692,6 +694,16 @@ $('userAttendanceButton').onclick=()=>showUserPage('attendance');
 $('userPromoButton').onclick=()=>showUserPage('promo');
 $('userInformationButton').onclick=()=>showUserPage('information');
 $('userContentButton').onclick=()=>showUserPage('content');
+function createVscodeMenuLink(){
+ const link=document.createElement('a');
+ link.className='vscode-menu-link';
+ link.href='./EraApps-VSCode/index.html';
+ link.target='_blank';
+ link.rel='noopener';
+ link.textContent='EraApps VSCode';
+ return link;
+}
+$('userNav').appendChild(createVscodeMenuLink());
 const userRegistrationButton=document.createElement('button');userRegistrationButton.type='button';userRegistrationButton.id='userRegistrationButton';userRegistrationButton.className='secondary';userRegistrationButton.textContent='Pendaftaran ERO/Promotor';userRegistrationButton.hidden=true;
 $('userNav').appendChild(userRegistrationButton);
 userRegistrationButton.onclick=()=>showUserPage('registration');
@@ -1294,7 +1306,7 @@ document.getElementById('adminNav').appendChild(dashboardButton);
 const adminPromoButton=document.createElement('button');adminPromoButton.type='button';adminPromoButton.dataset.adminMainPage='promo';adminPromoButton.textContent='Promo';adminPromoButton.onclick=()=>showAdminPage('promo');
 const adminInformationButton=document.createElement('button');adminInformationButton.type='button';adminInformationButton.dataset.adminMainPage='information';adminInformationButton.textContent='Informasi';adminInformationButton.onclick=()=>showAdminPage('information');
 const adminContentButton=document.createElement('button');adminContentButton.type='button';adminContentButton.className='nav-icon';adminContentButton.dataset.adminMainPage='content';adminContentButton.title='Menu tambahan';adminContentButton.setAttribute('aria-label','Menu tambahan');adminContentButton.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.62 1.62"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3A5 5 0 0 0 11 21.07l1.62-1.62"/></svg><span class="sr-only">Menu tambahan</span>';adminContentButton.onclick=()=>{showAdminPage('content');renderCustomContent(window.ERAAPPS_CUSTOM_CONTENT||[],true)};
-document.getElementById('adminNav').prepend(adminContentButton);document.getElementById('adminNav').append(adminPromoButton,adminInformationButton);
+document.getElementById('adminNav').prepend(adminContentButton);document.getElementById('adminNav').append(adminPromoButton,adminInformationButton,createVscodeMenuLink());
 const settingsMenu=document.createElement('div');settingsMenu.id='adminSettingsMenu';settingsMenu.className='admin-settings-menu admin-only';
 settingsMenu.innerHTML='<button type="button" id="adminSettingsToggle" aria-haspopup="menu" aria-expanded="false"><span>Setting</span></button><div id="adminSettingsSubmenu" class="admin-settings-submenu" role="menu" hidden><button type="button" data-admin-page="settings" role="menuitem">Tampilan & Keamanan</button><button type="button" data-admin-page="accounts" role="menuitem">Akun & Pendaftaran</button><button type="button" data-admin-page="passwordResetRequests" role="menuitem">Persetujuan Reset Password <span id="passwordResetCount" class="approval-count"></span></button></div>';
 document.getElementById('appNavRight').appendChild(settingsMenu);
