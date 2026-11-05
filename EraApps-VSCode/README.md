@@ -1,26 +1,22 @@
-# EraApps — VS Code
+# Report
 
 ## Menjalankan aplikasi
 1. Ekstrak `EraApps-VSCode.zip`.
-2. Buka folder `EraApps-VSCode` di Visual Studio Code.
-3. Pastikan ekstensi **Live Server** terpasang dan buka `index.html`.
-4. Klik **Go Live** pada status bar VS Code untuk menjalankan aplikasi melalui `http://localhost:5500`.
+2. Buka folder root `eraapps-cloud` di Visual Studio Code agar Report dan EraApps-V2 berjalan pada origin yang sama.
+3. Pastikan ekstensi **Live Server** terpasang, lalu jalankan Live Server dari `index.html` di root proyek.
+4. Buka `http://localhost:5500/EraApps-VSCode/index.html` untuk Report. Report akan memakai sesi EraApps-V2 yang sudah aktif; jika belum ada sesi, masuk melalui halaman EraApps-V2 terlebih dahulu.
 5. Untuk debugging, biarkan Live Server berjalan, buka panel **Run and Debug**, pilih **EraApps: Chrome**, lalu tekan **F5**. Konfigurasi debugger ada di `.vscode/launch.json` dan menggunakan debugger Chrome bawaan VS Code.
 6. File proyek tersimpan otomatis oleh VS Code sekitar 1 detik setelah perubahan berhenti.
 
-## Akun demo
-- Username: `admin`
-- Password: `admin`
-- Setelah masuk, pilih **Pencapaian Toko** atau **Pencapaian ERO** pada menu navigasi untuk membuka report.
+## Login dan role
+- Report membaca sesi, akun, status persetujuan, serta role dari Supabase EraApps-V2.
+- Role Admin, LOB, TSH, Store Leader, dan ERO mendapat tampilan sesuai cakupan organisasinya. Promotor belum memiliki akses Report.
+- Kelola akun melalui EraApps-V2; halaman Report hanya menampilkan akun yang dapat dilihat oleh role aktif.
 
 ## Fitur
-- Admin dapat membuat akun ERO, Store Leader, dan TSH.
-- Admin dapat menghapus akun semua role kecuali akun Admin utama.
-- Store Leader dapat membuat dan menghapus akun ERO pada store miliknya.
+- Akun dan role tidak disimpan atau dibuat di browser Report; keduanya mengikuti database EraApps-V2.
 - Admin dapat menghapus target satu per satu dari daftar target dan pencapaian satu per satu, termasuk data hasil import Excel dan input Erobook. Penghapusan memerlukan konfirmasi dan langsung memperbarui dashboard.
 - Admin juga dapat menghapus seluruh data target atau seluruh data pencapaian hasil import Excel sekaligus dari halaman UPDATE. Penghapusan semua pencapaian hasil import tidak menghapus catatan input Erobook.
-- Admin dapat import banyak akun melalui file Excel (`.xlsx` / `.xls`).
-- Template tersedia di `Template-Import-Akun-EraApps.xlsx` dan bisa diunduh dari halaman Manajemen Akun.
 - Menu **Pencapaian Toko** dan **Pencapaian ERO** memisahkan ringkasan target dan pencapaian non-VAS berdasarkan dimensi masing-masing; grafik kategori juga menampilkan Operator dan Repair Contract. AR Tecprotec dihitung sebagai quantity Tecprotec dibagi total quantity Device, Laptop, dan CE, dengan grafik quantity dan pie komposisi mengikuti filter laporan. Ekspor Excel mengikuti menu yang sedang dibuka. Telkomsel, Indosat, XL AXIATA, dan Tecprotec tersedia terpisah pada menu **VAS**.
 - Akun ERO memiliki menu **Form Erobook** di samping **Pencapaian ERO** dan tombol dari form untuk membuka laporan pencapaiannya.
 - Pada Form Erobook, category Operator hanya menampilkan brand Indosat, Telkomsel, dan XL AXIATA (Carrier tidak ditampilkan). Untuk Accessories, brand tidak perlu dipilih.
@@ -31,8 +27,5 @@
 - Report VAS menampilkan target, pencapaian, quantity VAS, quantity Device, dan AR (`quantity VAS / quantity Device`) dengan filter periode, toko, dan ERO. Pilihan data mengikuti akses role pengguna.
 - Import pencapaian perlu memuat kolom `quantity` agar AR dapat dihitung. Pada Erobook, quantity wajib diisi untuk Device dan VAS. Impor ulang data lama untuk mengisi quantity yang sebelumnya belum tersimpan.
 
-## Format Excel
-Gunakan kolom: `Nama`, `Username`, `Password`, `Role`, `Store`. Role yang diterima: `ERO`, `Store Leader`, `TSH`. Password minimal 6 karakter. Username harus unik. Contoh data pada template boleh diganti atau dihapus sebelum diimpor.
-
 ## Catatan
-Fitur Excel memakai SheetJS dari CDN dan baru memuat library saat fitur Excel digunakan, sehingga halaman utama tidak perlu menunggu unduhan library tersebut. Koneksi internet tetap diperlukan saat memakai import/export Excel. Akun disimpan di `localStorage` browser dan tidak disinkronkan antarperangkat. Ini prototipe front-end, bukan sistem autentikasi aman untuk operasional; untuk penggunaan nyata perlu backend/database dan password hashing.
+Report berbagi sesi login EraApps-V2 melalui Supabase Auth. Dataset target, pencapaian, dan Erobook masih tersimpan di `localStorage` browser; hanya identitas, akun, dan role yang dibaca dari database bersama. Koneksi internet diperlukan untuk autentikasi dan fitur Excel.

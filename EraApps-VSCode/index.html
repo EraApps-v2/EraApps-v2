@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EraApps</title>
+<title>Report | EraApps</title>
 <style>
 :root{--navy:#102544;--blue:#246bfd;--bg:#f3f6fb;--text:#1c2b40;--muted:#718096;--line:#e5ebf3;--green:#159b72;--orange:#e99a24;--red:#dc4c64}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Inter,Arial,sans-serif;color:var(--text)}
@@ -25,7 +25,7 @@ input,select{width:100%;padding:11px;border:1px solid #dbe3ee;border-radius:9px;
 @media(max-width:520px){main{padding:14px}.filters{grid-template-columns:1fr}.kpis{gap:9px}.kpi{padding:13px}.kpi strong{font-size:22px}header{padding:18px}.header-actions{width:100%}.header-actions button{flex:1}}
 @media print{body{background:white}.header-actions,.filters button{display:none!important}main{max-width:none;padding:10px}.panel,.kpi,.filters{box-shadow:none;break-inside:avoid}header{background:#102544!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 
-.app-nav{display:flex;align-items:center;gap:10px;padding:12px 24px;background:#fff;border-bottom:1px solid var(--line);flex-wrap:wrap}.nav-btn{background:#edf3ff;color:var(--navy)}.nav-btn.active{background:var(--blue);color:white}.nav-user{margin-left:auto;color:var(--muted);font-size:13px;font-weight:700}.page-view main{max-width:1400px;margin:auto;padding:24px}.page-heading{margin-bottom:18px}.page-heading h2{margin:0 0 6px}.page-heading p{margin:0;color:var(--muted);font-size:13px}.erobook-heading{display:flex;align-items:center;justify-content:space-between;gap:14px}.account-create{margin-bottom:18px}.account-form{display:grid;grid-template-columns:repeat(3,minmax(150px,1fr));gap:14px;align-items:end}.account-form button{min-height:42px}.login-screen{position:fixed;inset:0;z-index:99;background:linear-gradient(135deg,#102544,#19457b);display:flex;align-items:center;justify-content:center;padding:20px}.login-card{background:#fff;width:min(420px,100%);padding:30px;border-radius:18px;box-shadow:0 20px 70px #0003;display:flex;flex-direction:column;gap:10px}.login-logo{width:52px;height:52px;border-radius:14px;background:#102544;color:white;display:grid;place-items:center;font-weight:900;font-size:20px}.login-card h1{margin:4px 0 0;color:var(--navy)}.login-card p{margin:0 0 10px;color:var(--muted);font-size:13px}.login-card button{margin-top:8px}.login-card small{margin-top:8px;color:var(--muted);line-height:1.5}.login-card #loginMessage{color:var(--red);min-height:16px}.danger{background:#ffe8ed;color:#b72f49}.table-wrap td button{padding:6px 9px;font-size:11px}
+.app-nav{display:flex;align-items:center;gap:10px;padding:12px 24px;background:#fff;border-bottom:1px solid var(--line);flex-wrap:wrap}.nav-btn{background:#edf3ff;color:var(--navy)}.nav-btn.active{background:var(--blue);color:white}.nav-user{margin-left:auto;color:var(--muted);font-size:13px;font-weight:700}.page-view main{max-width:1400px;margin:auto;padding:24px}.page-heading{margin-bottom:18px}.page-heading h2{margin:0 0 6px}.page-heading p{margin:0;color:var(--muted);font-size:13px}.erobook-heading{display:flex;align-items:center;justify-content:space-between;gap:14px}.account-create{margin-bottom:18px}.account-form{display:grid;grid-template-columns:repeat(3,minmax(150px,1fr));gap:14px;align-items:end}.account-form button{min-height:42px}.login-screen{position:fixed;inset:0;z-index:99;background:linear-gradient(135deg,#102544,#19457b);display:flex;align-items:center;justify-content:center;padding:20px}.login-card{background:#fff;width:min(420px,100%);padding:30px;border-radius:18px;box-shadow:0 20px 70px #0003;display:flex;flex-direction:column;gap:10px}.login-logo{width:52px;height:52px;border-radius:14px;background:#102544;color:white;display:grid;place-items:center;font-weight:900;font-size:20px}.login-card h1{margin:4px 0 0;color:var(--navy)}.login-card p{margin:0 0 10px;color:var(--muted);font-size:13px}.login-card button,.login-card a{margin-top:8px}.login-card a{display:block;text-align:center;text-decoration:none;padding:11px 14px;border-radius:9px;font-weight:700}.login-card small{margin-top:8px;color:var(--muted);line-height:1.5}.login-card #loginMessage{color:var(--red);min-height:16px}.danger{background:#ffe8ed;color:#b72f49}.table-wrap td button{padding:6px 9px;font-size:11px}
 @media(max-width:900px){.account-form{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.account-form{grid-template-columns:1fr}.app-nav{padding:10px}.nav-user{width:100%;margin-left:0}.page-view main{padding:14px}.erobook-heading{align-items:flex-start;flex-direction:column}.erobook-heading button{width:100%}}
 .report-filters{grid-template-columns:repeat(4,minmax(130px,1fr))}.report-actions{display:flex;gap:9px;flex-wrap:wrap;margin:12px 0}.report-actions button{white-space:nowrap}.report-form{display:grid;grid-template-columns:repeat(4,minmax(130px,1fr));gap:12px;align-items:end}.report-form button{min-height:42px}.report-kpis{grid-template-columns:repeat(3,1fr)}.report-chart{min-height:210px;display:flex;align-items:flex-end;gap:12px;padding:20px 12px 4px;border-bottom:1px solid var(--line);overflow:auto}.chart-column{min-width:48px;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:7px;height:190px}.chart-column strong{font-size:11px}.chart-column span{width:min(34px,80%);min-height:3px;border-radius:7px 7px 0 0;background:linear-gradient(180deg,#62a0ff,#246bfd)}.chart-column small{font-size:10px;color:var(--muted);text-align:center;max-width:85px;overflow:hidden;text-overflow:ellipsis}.target-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:12px 0}.target-summary div{padding:14px;border:1px solid var(--line);border-radius:10px}.target-summary small{display:block;color:var(--muted);margin-bottom:6px}.hidden{display:none!important}
 .vas-filters{grid-template-columns:repeat(5,minmax(130px,1fr)) auto}.vas-kpis{grid-template-columns:repeat(3,1fr)}
@@ -39,10 +39,10 @@ input,select{width:100%;padding:11px;border:1px solid #dbe3ee;border-radius:9px;
 </head>
 <body>
 <header>
-  <div class="brand"><div class="logo">EA</div><div><h1>EraApps</h1><p>Manajemen akun dan laporan</p></div></div>
+  <div class="brand"><div class="logo">R</div><div><h1>Report</h1><p>Laporan EraApps</p></div></div>
 </header>
 <nav class="app-nav" id="appNav" style="display:none">
-  <button class="nav-btn active" onclick="showPage('accounts')" id="navAccounts">Manajemen Akun</button>
+  <button class="nav-btn active" onclick="showPage('accounts')" id="navAccounts">Akun</button>
   <button class="nav-btn" onclick="showPage('storeReport')" id="navStoreReport">Pencapaian Toko</button>
   <button class="nav-btn" onclick="showPage('eroReport')" id="navEroReport">Pencapaian ERO</button>
   <button class="nav-btn" onclick="showPage('erobook')" id="navErobook">Form Erobook</button>
@@ -53,8 +53,8 @@ input,select{width:100%;padding:11px;border:1px solid #dbe3ee;border-radius:9px;
 </nav>
 <section id="accountsPage" class="page-view" style="display:none">
   <main>
-    <div class="page-heading"><div><h2>Manajemen Akun</h2><p>Daftarkan dan kelola akun sesuai hak akses.</p></div></div>
-    <section class="panel account-create">
+    <div class="page-heading"><div><h2>Akun EraApps-V2</h2><p>Daftar akun dan role dibaca dari database EraApps-V2.</p></div></div>
+    <section class="panel account-create" style="display:none">
       <h2>Daftarkan Akun</h2><p class="sub" id="permissionNote">Hak akses mengikuti role akun yang login.</p>
       <form id="accountForm" class="account-form">
         <div><label for="newName">NAMA LENGKAP</label><input id="newName" required placeholder="Nama pengguna"></div>
@@ -65,7 +65,7 @@ input,select{width:100%;padding:11px;border:1px solid #dbe3ee;border-radius:9px;
         <button class="primary" type="submit">+ Buat Akun</button>
       </form><p class="note" id="accountMessage" role="status"></p>
     </section>
-    <section class="panel account-create" id="excelImportPanel">
+    <section class="panel account-create" id="excelImportPanel" style="display:none">
       <h2>Import akun dari Excel</h2>
       <p class="sub">Khusus Admin. Isi template dengan kolom Nama, Username, Password, Role, dan Store untuk membuat banyak akun sekaligus.</p>
       <div class="account-form">
@@ -75,7 +75,7 @@ input,select{width:100%;padding:11px;border:1px solid #dbe3ee;border-radius:9px;
       </div>
       <p class="note" id="excelMessage" role="status"></p>
     </section>
-    <section class="panel"><h2>Daftar Akun</h2><p class="sub">Akun yang tersimpan pada browser ini.</p><div class="table-wrap"><table><thead><tr><th>Nama</th><th>Username</th><th>Role</th><th>Store</th><th>Aksi</th></tr></thead><tbody id="accountsTable"></tbody></table></div></section>
+    <section class="panel"><h2>Daftar Akun</h2><p class="sub">Akun dan hak akses yang dapat dilihat sesuai role Anda.</p><div class="table-wrap"><table><thead><tr><th>Nama</th><th>Username</th><th>Role</th><th>Store</th><th>Status</th></tr></thead><tbody id="accountsTable"></tbody></table></div></section>
   </main>
 </section>
 <section id="reportsPage" class="page-view" style="display:none">
@@ -177,18 +177,15 @@ input,select{width:100%;padding:11px;border:1px solid #dbe3ee;border-radius:9px;
 </section>
 <div id="loginScreen" class="login-screen">
   <form id="loginForm" class="login-card">
-    <div class="login-logo">EA</div><h1>EraApps</h1><p>Masuk ke sistem laporan dan manajemen akun</p>
-    <label for="loginUsername">USERNAME</label><input id="loginUsername" required autocomplete="username" placeholder="Masukkan username">
-    <label for="loginPassword">PASSWORD</label><input id="loginPassword" required type="password" autocomplete="current-password" placeholder="Masukkan password">
-    <button class="primary" type="submit">Masuk</button><p id="loginMessage" role="status"></p>
-    <small>Login Admin: username <b>admin</b>, password <b>admin</b></small>
+    <div class="login-logo">R</div><h1>Report</h1><p id="loginDescription">Memeriksa sesi EraApps-V2...</p>
+    <input id="loginUsername" type="hidden"><input id="loginPassword" type="hidden">
+    <button class="primary" type="submit" hidden>Masuk</button><p id="loginMessage" role="status" aria-live="polite"></p>
+    <a class="primary" href="../index.html">Buka EraApps-V2</a>
   </form>
 </div>
 <script>
-const initialAccounts=[{name:'Administrator',username:'admin',password:'admin',role:'Admin',store:'Semua Store'}];
-function getAccounts(){try{const a=JSON.parse(localStorage.getItem('eraappsAccounts'));return Array.isArray(a)?a:initialAccounts.slice()}catch(e){return initialAccounts.slice()}}
-function saveAccounts(a){localStorage.setItem('eraappsAccounts',JSON.stringify(a))}
-if(!localStorage.getItem('eraappsAccounts')){saveAccounts(initialAccounts)}else{try{const saved=JSON.parse(localStorage.getItem('eraappsAccounts'));const admin=saved.find(a=>String(a.username).toLowerCase()==='admin');if(admin){admin.password='admin';admin.role='Admin';admin.store='Semua Store';saveAccounts(saved)}else{saved.unshift(...initialAccounts);saveAccounts(saved)}}catch(e){saveAccounts(initialAccounts)}}
+function getAccounts(){return []}
+function saveAccounts(){throw new Error('Akun dikelola melalui database EraApps-V2.')}
 let currentUser=null,reportViewMode='store';
 const SALES_COLUMNS=['site_code','site_desc','sales_code','sales_name','pos_number','order_date','nama costumer','customer_email','phone_number','item_group','item_group_desc','brand_name','article_code','article_description','quantity','price','discount','total_nett_amount_with_tax','total_nett_amount_exc_tax'];
 const TARGET_CATEGORY_MAP=[
@@ -481,6 +478,141 @@ document.getElementById('erobookCategory').addEventListener('change',populateEro
 document.getElementById('erobookBrand').addEventListener('change',updateErobookQuantityRequirement);
 document.getElementById('erobookForm').addEventListener('submit',event=>{event.preventDefault();const msg=document.getElementById('erobookMessage');if(currentUser?.role!=='ERO'){msg.textContent='Hanya akun ERO yang dapat mengisi Erobook.';return}const period=document.getElementById('erobookDate').value,store=currentUser.store,category=document.getElementById('erobookCategory').value,brand=document.getElementById('erobookBrand').value,amount=Number(document.getElementById('erobookAmount').value),quantityText=document.getElementById('erobookQuantity').value.trim(),quantity=quantityText===''?0:Number(quantityText),quantityRequired=category==='Device'||VAS_BRANDS.includes(brand),brandRequired=category!=='Accessories',validBrand=brandRequired?categoryBrands(category).includes(brand):!brand;if(!period||!store||!categoryOptions().includes(category)||!validBrand||!Number.isFinite(amount)||amount<0||!Number.isFinite(quantity)||quantity<0||(quantityRequired&&quantityText==='')){msg.textContent='Lengkapi tanggal, category, brand (kecuali Accessories), pencapaian, dan quantity untuk Device/VAS.';return}try{const rows=readStored('eraappsEroBook'),record={period,store,ero:currentUser.name,category,brand,amount,quantity,rows:1,source:'erobook',updatedAt:new Date().toISOString()},index=rows.findIndex(row=>row.period===period&&row.store===store&&row.ero===currentUser.name&&row.category===category&&row.brand===brand);if(index<0)rows.push(record);else rows[index]=record;saveStored('eraappsEroBook',rows);msg.textContent='Pencapaian harian tersimpan dan sudah masuk dashboard.';document.getElementById('erobookAmount').value='';document.getElementById('erobookQuantity').value='';renderErobook();populateFilters();renderReport();renderVasReport()}catch(error){msg.textContent=error.message}});
 window.addEventListener('storage',event=>{if(['eraappsSales','eraappsTargets','eraappsEroBook'].includes(event.key)){if(currentUser?.role==='ERO')renderErobook();populateFilters();renderReport();renderVasReport()}});
+</script>
+<script src="../supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+var reportClient=null;
+var reportAccounts=[];
+var reportScopedStores=new Set();
+var reportSupportedRoles=['Admin','LOB','TSH','Store Leader','ERO'];
+var reportKey=value=>String(value||'').trim().toLocaleLowerCase('id-ID');
+
+window.getAccounts=()=>reportAccounts;
+window.saveAccounts=()=>{throw new Error('Akun dikelola melalui database EraApps-V2.')};
+window.allowedRoles=()=>[];
+window.setupAccountForm=()=>{
+  document.getElementById('accountForm').style.display='none';
+  document.getElementById('excelImportPanel').style.display='none';
+};
+window.renderAccounts=()=>{
+  const rows=visibleReportAccounts();
+  document.getElementById('accountsTable').innerHTML=rows.map(account=>`<tr><td>${escapeHtml(account.name)}</td><td>${escapeHtml(account.username)}</td><td>${escapeHtml(account.role)}</td><td>${escapeHtml(account.store||'-')}</td><td>${escapeHtml(account.accountStatus||'approved')}</td></tr>`).join('')||'<tr><td colspan="5" class="empty">Tidak ada akun dalam cakupan role Anda.</td></tr>';
+};
+window.deleteAccount=()=>{};
+window.visibleReportAccounts=()=>reportAccounts.filter(account=>{
+  if(!['ERO','Store Leader'].includes(account.role))return false;
+  if(currentUser?.role==='Admin')return true;
+  if(['LOB','TSH','Store Leader'].includes(currentUser?.role))return reportScopedStores.has(reportKey(account.store));
+  return currentUser?.role==='ERO'&&account.role==='ERO'&&reportKey(account.name)===reportKey(currentUser.name);
+});
+window.allowedReportRows=rows=>{
+  if(currentUser?.role==='Admin')return rows;
+  if(!reportSupportedRoles.includes(currentUser?.role))return [];
+  if(['LOB','TSH','Store Leader'].includes(currentUser.role))return rows.filter(row=>reportScopedStores.has(reportKey(row.store)));
+  if(currentUser.role==='ERO')return rows.filter(row=>reportScopedStores.has(reportKey(row.store))&&reportKey(row.ero)===reportKey(currentUser.name));
+  return [];
+};
+const originalShowPage=window.showPage;
+window.showPage=page=>{
+  const role=currentUser?.role;
+  if(!reportSupportedRoles.includes(role))return;
+  if(page==='accounts'&&!['Admin','LOB','TSH','Store Leader'].includes(role))return;
+  if(page==='update'&&!['Admin','Store Leader'].includes(role))return;
+  if(page==='erobook'&&role!=='ERO')return;
+  if(['storeReport','eroReport','vas'].includes(page)&&!reportSupportedRoles.includes(role))return;
+  originalShowPage(page);
+};
+window.startSession=user=>{
+  currentUser=user;
+  document.getElementById('loginScreen').style.display='none';
+  document.getElementById('appNav').style.display='flex';
+  document.getElementById('navUser').textContent=`${user.name} · ${user.role}${user.store?' · '+user.store:''}`;
+  document.getElementById('navAccounts').style.display=['Admin','LOB','TSH','Store Leader'].includes(user.role)?'inline-block':'none';
+  document.getElementById('navUpdate').style.display=['Admin','Store Leader'].includes(user.role)?'inline-block':'none';
+  document.getElementById('navStoreReport').style.display='inline-block';
+  document.getElementById('navEroReport').style.display='inline-block';
+  document.getElementById('navVas').style.display='inline-block';
+  document.getElementById('navErobook').style.display=user.role==='ERO'?'inline-block':'none';
+  setupAccountForm();
+  renderAccounts();
+  showPage(user.role==='ERO'?'erobook':'storeReport');
+};
+window.logout=async()=>{
+  if(reportClient)await reportClient.auth.signOut();
+  window.location.href='../index.html';
+};
+
+function showSessionRequired(message){
+  currentUser=null;
+  document.getElementById('appNav').style.display='none';
+  document.getElementById('loginScreen').style.display='flex';
+  document.getElementById('loginDescription').textContent='Report menggunakan sesi login EraApps-V2 yang sama.';
+  document.getElementById('loginMessage').textContent=message;
+}
+function profileAccount(profile){
+  return {
+    id:profile.id,username:profile.username||profile.email||'',name:profile.full_name||profile.username||'',
+    role:profile.role==='admin'?'Admin':profile.user_type||'',store:profile.store_name||'',storeCode:profile.store_code||'',
+    lob:profile.lob||'',tsh:profile.tsh||'',accountStatus:profile.account_status||'approved'
+  };
+}
+async function restoreEraAppsSession(){
+  const config=window.ERAAPPS_SUPABASE_CONFIG;
+  if(!config?.url||!config?.anonKey||!window.supabase?.createClient){
+    showSessionRequired('Koneksi database EraApps-V2 tidak tersedia.');
+    return;
+  }
+  try{
+    reportClient=window.supabase.createClient(config.url,config.anonKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
+    reportClient.auth.onAuthStateChange(event=>{
+      if(event==='SIGNED_OUT')showSessionRequired('Sesi EraApps-V2 telah berakhir. Masuk kembali melalui EraApps-V2.');
+    });
+    const {data:{session}}=await reportClient.auth.getSession();
+    if(!session){showSessionRequired('Masuk ke EraApps-V2 terlebih dahulu, lalu buka Report kembali.');return}
+    const [profileResult,staffResult,accessResult]=await Promise.all([
+      reportClient.from('profiles').select('*').order('username'),
+      reportClient.from('staff').select('code,lob,tsh,store_code,store_name').order('code'),
+      reportClient.from('staff_access').select('user_id,staff_code')
+    ]);
+    if(profileResult.error)throw profileResult.error;
+    if(staffResult.error)throw staffResult.error;
+    if(accessResult.error)throw accessResult.error;
+    const profile=profileResult.data.find(item=>item.id===session.user.id);
+    if(!profile)throw new Error('Profil akun tidak ditemukan di EraApps-V2.');
+    if(profile.role!=='admin'&&profile.account_status!=='approved'){
+      showSessionRequired('Akun EraApps-V2 belum disetujui.');
+      return;
+    }
+    const role=profile.role==='admin'?'Admin':profile.user_type||'';
+    if(!reportSupportedRoles.includes(role)){
+      showSessionRequired(`Role ${role||'tidak dikenal'} belum memiliki akses Report.`);
+      return;
+    }
+    const staffRows=staffResult.data||[];
+    const ownCodes=(accessResult.data||[]).filter(item=>item.user_id===profile.id).map(item=>item.staff_code);
+    const scopedStaff=role==='Admin'?staffRows:role==='LOB'
+      ?staffRows.filter(item=>reportKey(item.lob)===reportKey(profile.lob))
+      :role==='TSH'?staffRows.filter(item=>reportKey(item.lob)===reportKey(profile.lob)&&reportKey(item.tsh)===reportKey(profile.tsh))
+      :role==='Store Leader'?staffRows.filter(item=>reportKey(item.store_code)===reportKey(profile.store_code))
+      :staffRows.filter(item=>ownCodes.includes(item.code)||reportKey(item.store_code)===reportKey(profile.store_code));
+    reportScopedStores=new Set(scopedStaff.map(item=>reportKey(item.store_name)).filter(Boolean));
+    if(profile.store_name)reportScopedStores.add(reportKey(profile.store_name));
+    reportAccounts=(profileResult.data||[])
+      .filter(item=>item.role==='user'&&item.account_status==='approved'&&item.id!==profile.id)
+      .map(profileAccount);
+    const user={...profileAccount(profile),profile,staffCodes:ownCodes};
+    window.startSession(user);
+  }catch(error){
+    console.error('Gagal memulihkan sesi EraApps-V2:',error);
+    showSessionRequired(error.message||'Gagal membaca profil EraApps-V2.');
+  }
+}
+if(window.supabase?.createClient){
+  restoreEraAppsSession();
+}else{
+  document.querySelector('script[src*="supabase-js"]')?.addEventListener('load',restoreEraAppsSession,{once:true});
+}
 </script>
 </body>
 </html>
